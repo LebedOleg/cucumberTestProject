@@ -121,4 +121,6 @@ public class BlogsPage extends PageObject {
     public boolean headerNotEqual() {
         return header.equals($(ILocators.BLOG_DESCRIPTION_PAGE_BREADCRUMB).getText());
     }
+
+
 }
