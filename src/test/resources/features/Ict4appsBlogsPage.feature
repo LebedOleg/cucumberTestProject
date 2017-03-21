@@ -28,6 +28,8 @@ Feature: Blogs page
     Then Website is opened and contains title of post that was chosen
     When the user click on Previous link
     Then entry should change to previous
+    When the user click on Next link
+    Then entry should change to next
     Examples:
       | number of blog |
       | 1              |

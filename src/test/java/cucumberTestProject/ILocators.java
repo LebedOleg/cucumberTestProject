@@ -22,7 +22,7 @@ public interface ILocators {
 
     //////////////////////////////////////////                       //////////////////////////////////////////
     String SIGN_IN = "//a[contains(text(),'Sign In')]";
-    String SIGN_IN_BUTTON = "//button[contains(text(),'Sign In')]";
+
     String ERROR_MESSAGE_REQUIRED = "(//div[contains(text(),'This field is required.')])[$1]";
     String SIGN_IN_INPUT = ".//*[@id='_58_$1']";
     String SPECIAL_IMAGE_CAROUSEL_NEXT = "(//button[contains(text(),'Next')])[1]";
@@ -129,7 +129,17 @@ public interface ILocators {
 
 
     //TODO://////////////////////////////////////////CONTACT US PAGE////////////////////////////////////////////////////
+    String CONTACTUS_PAGE_SEND_BUTTON ="//button[contains(text(),'Send')]";
+    String CONTACTUS_PAGE_ERROR_MESSAGE = "//label[contains(text(),'$1')]/ancestor::div[@class='fildWrapper']//span[contains(text(),'This field is mandatory.')]";
+    String CONTACTUS_PAGE_ERROR_MESSAGE_COMMENTS = "//label[contains(text(),'$1')]/ancestor::div[@class='fildTextWrapper']//span[contains(text(),'This field is mandatory.')]";
+    String CONTACTUS_PAGE_INPUTFIELD = "//label[contains(text(),'$1')]/ancestor::div[@class='control-group']/input";
+    String CONTACTUS_PAGE_TEXTAREA = "//textarea";
 
-
-
+    //TODO://////////////////////////////////////////SIGN IN PAGE////////////////////////////////////////////////////////
+    String SIGN_IN_SOCIAL_ICONS = "(//span[contains(text(),'$1')])[1]";
+    String SIGN_IN_BUTTON = "//button[contains(text(), ' Sign In ')]";
+    String SIGN_IN_INPUT_FIELD = ".//*[@id='_58_$1']";
+    String SIGN_IN_ERROR_MESSAGE = "//label[text()='$1']/../div/div";
+    String SIGN_IN_ERROR_MESSAGE_REQUEST = "//div[text()=' Your request failed to complete. ']";
+    String SIGN_IN_ERROR_MESSAGE_TRY_AGAIN = "//*[text()=' Authentication failed. Please try again. ']";
 }

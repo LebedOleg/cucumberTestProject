@@ -1,6 +1,7 @@
 package cucumberTestProject.steps;
 
 import cucumber.api.PendingException;
+import cucumberTestProject.ILocators;
 import net.thucydides.core.annotations.Steps;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -419,5 +420,95 @@ public class DefinitionSteps {
     @Then("^entry should change to previous$")
     public void entryShouldChangeToPrevious() throws Throwable {
         anna.entryShouldChangeToPrevious();
+    }
+
+    @When("^the user click on Next link$")
+    public void theUserClickOnNextLink() throws Throwable {
+        anna.theUserClickOnNextLink();
+    }
+
+    @Then("^entry should change to next$")
+    public void entryShouldChangeToNext() throws Throwable {
+        anna.entryShouldChangeToPrevious();
+    }
+
+    @Given("^User is on Contact Us page$")
+    public void userIsOnContactUsPage() throws Throwable {
+        anna.userIsOnContactUsPage();
+    }
+
+    @When("^the user click on SEND button$")
+    public void theUserClickOnSENDButton() throws Throwable {
+        anna.theUserClickOnSENDButton();
+    }
+
+    @Then("^error message appears above \"([^\"]*)\" textbox$")
+    public void errorMessageAppearsAboveTextbox(String arg0) throws Throwable {
+        anna.errorMessageAppearsAboveTextbox(arg0);
+    }
+
+    @Then("^error message appears above \"([^\"]*)\" entry area$")
+    public void errorMessageAppearsAboveEntryArea(String arg0) throws Throwable {
+        anna.errorMessageAppearsAboveEntryArea(arg0);
+    }
+
+    @When("^Enter \"([^\"]*)\" in \"([^\"]*)\" textbox$")
+    public void enterInTextbox(String arg0, String arg1) throws Throwable {
+        anna.enterInTextbox(arg0,arg1);
+    }
+
+    @Then("^error message above \"([^\"]*)\" should disappear$")
+    public void errorMessageAboveShouldDisappear(String arg0) throws Throwable {
+        anna.errorMessageAboveShouldDisappear(arg0);
+    }
+
+    @Then("^error message above \"([^\"]*)\" entry area should disappear$")
+    public void errorMessageAboveAntryAreaShouldDisappear(String arg0) throws Throwable {
+        anna.errorMessageAboveAntryAreaShouldDisappear(arg0);
+    }
+
+    @When("^Enter \"([^\"]*)\" in \"([^\"]*)\" entry area$")
+    public void enterInEntryArea(String arg0, String arg1) throws Throwable {
+        anna.enterInEntryArea(arg0,arg1);
+    }
+
+    @When("^the user click on \"([^\"]*)\"$")
+    public void theUserClickOn(String arg0) throws Throwable {
+        anna.theUserClickOn(arg0);
+    }
+
+    @Given("^user is on Sign In page$")
+    public void userIsOnSignInPage() throws Throwable {
+        anna.userIsOnSignInPage();
+    }
+
+    @When("^the user click on SIGN IN link on SIGN IN page$")
+    public void theUserClickOnSIGNINLinkOnSIGNINPage() throws Throwable {
+        anna.theUserClickOnSIGNINLinkOnSIGNINPage();
+    }
+
+    @Then("^error message should appear above \"([^\"]*)\" textbox$")
+    public void errorMessageShouldAppearAboveTextbox(String arg0) throws Throwable {
+        anna.errorMessageShouldAppearAboveTextbox(arg0);
+    }
+
+    @When("^Enter \"([^\"]*)\" in \"([^\"]*)\" textbox on SIGN IN page$")
+    public void enterInTextboxOnSIGNINPage(String arg0, String arg1) throws Throwable {
+        anna.enterInTextboxOnSIGNINPage(arg0,arg1);
+    }
+
+    @Then("^error message above the \"([^\"]*)\" textbox should disappear$")
+    public void errorMessageAboveTheTextboxShouldDisappear(String arg0) throws Throwable {
+        anna.errorMessageAboveTheTextboxShouldDisappear(arg0);
+    }
+
+    @Then("^Request failed to complete error message should appear$")
+    public void requestFailedToCompleteErrorMessageShouldAppear() throws Throwable {
+        anna.requestFailedToCompleteErrorMessageShouldAppear();
+    }
+
+    @Then("^Please try again error message should appear$")
+    public void pleaseTryAgainErrorMessageShouldAppear() throws Throwable {
+        anna.pleaseTryAgainErrorMessageShouldAppear();
     }
 }

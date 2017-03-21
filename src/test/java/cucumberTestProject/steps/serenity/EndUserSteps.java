@@ -21,6 +21,7 @@ public class EndUserSteps {
     SpecialOffersPage specialOffersPage;
     BlogsPage blogsPage;
     ContactUsPage contactUsPage;
+    SignInPage signInPage;
 
 
     @Step
@@ -515,6 +516,89 @@ public class EndUserSteps {
     @Step
     public void entryShouldChangeToPrevious() {
         Assert.assertFalse(blogsPage.headerNotEqual());
+    }
+
+    @Step
+    public void theUserClickOnNextLink() {
+        blogsPage.theUserClickOnNextLink();
+    }
+
+    @Step
+    public void userIsOnContactUsPage() {
+        contactUsPage.open();
+
+    }
+
+    @Step
+    public void theUserClickOnSENDButton() {
+        contactUsPage.theUserClickOnSENDButton();
+    }
+
+    @Step
+    public void errorMessageAppearsAboveTextbox(String arg0) {
+       Assert.assertTrue(contactUsPage.errorMessageAppearsAboveTextbox(arg0));
+    }
+
+    @Step
+    public void errorMessageAppearsAboveEntryArea(String arg0) {
+        Assert.assertTrue(contactUsPage.errorMessageAppearsAboveEntryArea(arg0));
+    }
+    @Step
+    public void enterInTextbox(String arg0, String arg1) {
+        contactUsPage.enterInTextbox(arg0,arg1);
+    }
+
+    @Step
+    public void errorMessageAboveShouldDisappear(String arg0) {
+        Assert.assertFalse(contactUsPage.errorMessageAboveShouldDisappear(arg0));
+    }
+
+    @Step
+    public void errorMessageAboveAntryAreaShouldDisappear(String arg0) {
+        Assert.assertFalse(contactUsPage.errorMessageAboveAntryAreaShouldDisappear(arg0));
+    }
+    @Step
+    public void enterInEntryArea(String arg0, String arg1) {
+        contactUsPage.enterInEntryArea(arg0,arg1);
+    }
+
+    @Step
+    public void theUserClickOn(String arg0) {
+           signInPage.theUserClickOn(arg0);
+    }
+    @Step
+    public void userIsOnSignInPage() {
+        signInPage.open();
+    }
+
+    @Step
+    public void theUserClickOnSIGNINLinkOnSIGNINPage() {
+        signInPage.theUserClickOnSIGNINLinkOnSIGNINPage();
+    }
+
+    @Step
+    public void errorMessageShouldAppearAboveTextbox(String arg0) {
+       Assert.assertTrue(signInPage.errorMessageShouldAppearAboveTextbox(arg0));
+    }
+
+    @Step
+    public void enterInTextboxOnSIGNINPage(String arg0, String arg1) {
+        signInPage.enterInTextboxOnSIGNINPage(arg0,arg1);
+    }
+
+    @Step
+    public void errorMessageAboveTheTextboxShouldDisappear(String arg0) {
+        Assert.assertFalse(signInPage.errorMessageAboveTheTextboxShouldDisappear(arg0));
+    }
+
+    @Step
+    public void requestFailedToCompleteErrorMessageShouldAppear() {
+        Assert.assertTrue(signInPage.requestFailedToCompleteErrorMessageShouldAppear());
+    }
+
+    @Step
+    public void pleaseTryAgainErrorMessageShouldAppear() {
+        Assert.assertTrue(signInPage.pleaseTryAgainErrorMessageShouldAppear());
     }
 }
 

@@ -115,6 +115,7 @@ public class BlogsPage extends PageObject {
     }
 
     public void theUserClickOnPreviousLink() {
+        header = $(ILocators.BLOG_DESCRIPTION_PAGE_BREADCRUMB).getText();
         $(ILocators.BLOG_DESCRIPTION_PAGE_PREVIOUS_BUTTON).click();
     }
 
@@ -123,4 +124,8 @@ public class BlogsPage extends PageObject {
     }
 
 
+    public void theUserClickOnNextLink() {
+        header = $(ILocators.BLOG_DESCRIPTION_PAGE_BREADCRUMB).getText();
+        $(ILocators.BLOG_DESCRIPTION_PAGE_NEXT_BUTTON).click();
+    }
 }
