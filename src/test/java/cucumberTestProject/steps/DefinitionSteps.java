@@ -81,10 +81,7 @@ public class DefinitionSteps {
     }
 
 
-    @When("^the user move mouse cursor on \"([^\"]*)\" item in picture carousel$")
-    public void theUserMoveMouseCursorOnItemInPictureCarousel(String arg0) throws Throwable {
-        anna.move_mouse_on_picture(arg0);
-    }
+
 
 
     @When("^the user click on SIGN IN link$")
@@ -92,27 +89,7 @@ public class DefinitionSteps {
         anna.click_on_sign_in_link();
     }
 
-    @When("^the user click on SIGN IN button$")
-    public void theUserClickOnSIGNINButton() throws Throwable {
-        anna.click_sign_in_button();
-    }
 
-
-    @Then("^error messages should appear near the \"([^\"]*)\" and \"([^\"]*)\" fields$")
-    public void errorMessagesShouldAppearNearTheAndFields(String arg0, String arg1) throws Throwable {
-        anna.error_message_is_appear(arg0, arg1);
-    }
-
-
-    @When("^the user clear value in \"([^\"]*)\" field, enter \"([^\"]*)\" in login field and click on SIGN IN button$")
-    public void theUserClearValueInFieldEnterInLoginFieldAndClickOnSIGNINButton(String arg0, String arg1) throws Throwable {
-        anna.clearEnterAndClickOnSignInButton(arg0, arg1);
-    }
-
-    @Then("^error messages should appear near the \"([^\"]*)\" field$")
-    public void errorMessagesShouldAppearNearTheField(String arg0) throws Throwable {
-        anna.error_message_is_appears(arg0);
-    }
 
     @When("^the user move mouse cursor on \"([^\"]*)\" in OUR SPECIAL OFFERS picture carousel$")
     public void theUserMoveMouseCursorOnInOURSPECIALOFFERSPictureCarousel(String arg0) throws Throwable {
@@ -510,5 +487,116 @@ public class DefinitionSteps {
     @Then("^Please try again error message should appear$")
     public void pleaseTryAgainErrorMessageShouldAppear() throws Throwable {
         anna.pleaseTryAgainErrorMessageShouldAppear();
+    }
+
+    @When("^the user click on Create Account link$")
+    public void theUserClickOnCreateAccountLink() throws Throwable {
+        anna.theUserClickOnCreateAccountLink();
+    }
+
+    @Then("^Create Account page should be open$")
+    public void createAccountPageShouldBeOpen() throws Throwable {
+        anna.createAccountPageShouldBeOpen();
+    }
+
+    @Given("^the user is on Create Account page$")
+    public void theUserIsOnCreateAccountPage() throws Throwable {
+        anna.theUserIsOnCreateAccountPage();
+    }
+
+    @When("^the user click on SAVE button$")
+    public void theUserClickOnSAVEButton() throws Throwable {
+        anna.theUserClickOnSAVEButton();
+    }
+
+
+
+    @Then("^Error message should appear at the right of \"([^\"]*)\" textbox$")
+    public void errorMessageShouldAppearAtTheRightOfTextbox(String arg0) throws Throwable {
+        anna.errorMessageShouldAppearAtTheRightOfTextbox(arg0);
+    }
+
+    @When("^the user click on date picker$")
+    public void theUserClickOnDatePicker() throws Throwable {
+        anna.theUserClickOnDatePicker();
+    }
+
+    @When("^the user click on \"([^\"]*)\" arrow link$")
+    public void theUserClickOnArrowLink(String arg0) throws Throwable {
+        anna.theUserClickOnArrowLink(arg0);
+    }
+
+
+    @Then("^date should change to \"([^\"]*)\"$")
+    public void dateShouldChangeTo(String arg0) throws Throwable {
+        anna.dateShouldChangeTo(arg0);
+    }
+
+    @When("^the user click on \"([^\"]*)\" calendar day$")
+    public void theUserClickOnCalendarDay(String arg0) throws Throwable {
+        anna.theUserClickOnCalendarDay(arg0);
+    }
+
+    @Then("^date in textbox should change to \"([^\"]*)\"$")
+    public void dateInTextboxShouldChangeTo(String arg0) throws Throwable {
+        anna.dateInTextboxShouldChangeTo(arg0);
+    }
+
+    @When("^the user click on site logotype$")
+    public void theUserClickOnSiteLogotype() throws Throwable {
+        anna.theUserClickOnSiteLogotype();
+    }
+
+
+
+
+    @Then("^Page should have \"([^\"]*)\" URL$")
+    public void pageShouldHaveURL(String arg0) throws Throwable {
+        anna.pageShouldHaveURL(arg0);
+    }
+
+    @Then("^Page have right header$")
+    public void pageHaveRightHeader() throws Throwable {
+       anna.pageHaveRightHeader();
+    }
+
+    @Then("^Page have \"([^\"]*)\" textbox$")
+    public void pageHaveTextbox(String arg0) throws Throwable {
+        anna.pageHaveTextbox(arg0);
+    }
+
+    @When("^the user click on GOOGLEPLAY link$")
+    public void theUserClickOnGOOGLEPLAYLink() throws Throwable {
+        anna.theUserClickOnGOOGLEPLAYLink();
+    }
+
+    @Then("^Page should have \"([^\"]*)\" title$")
+    public void pageShouldHaveTitle(String arg0) throws Throwable {
+        anna.pageShouldHaveTitle(arg0);
+    }
+
+    @Then("^Page should have install button$")
+    public void pageShouldHaveInstallButton() throws Throwable {
+        anna.pageShouldHaveInstallButton();
+    }
+
+    @When("^the user click on title of \"([^\"]*)\"$")
+    public void theUserClickOnTitleOf(String arg0) throws Throwable {
+        anna.theUserClickOnTitleOf(arg0);
+    }
+
+    @When("^the user click on MORE link of \"([^\"]*)\"$")
+    public void theUserClickOnMORELinkOf(String arg0) throws Throwable {
+        anna.theUserClickOnMORELinkOf(arg0);
+    }
+
+    @When("^the user click on \"([^\"]*)\" of category image carousel$")
+    public void theUserClickOnOfCategoryImageCarousel(String arg0) throws Throwable {
+        anna.theUserClickOnOfCategoryImageCarousel(arg0);
+    }
+
+    @Then("^URL should contain \"([^\"]*)\" part$")
+    public void urlShouldContainPart(String arg0) throws Throwable {
+        anna.urlShouldContainPart(arg0);
     }
 }

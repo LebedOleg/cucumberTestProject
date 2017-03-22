@@ -3,18 +3,26 @@ package cucumberTestProject;
 
 public interface ILocators {
 
-    String WELCOME_HEADER_GOOGLEPLAYLINK = "//div[@class='slogan-mobile-data']/a[1]";
-    String WELCOME_HEADER_APPSTORELINK = "//div[@class='slogan-mobile-data']/a[2]";
+
     String PAGE_BREADCRUMB = "//a[contains(text(),'$1')]";
     String WELCOME_HEADER_MENULINK = "(//span[contains(text(),'$1')])[1]";
     String WELCOME_IMAGECAROUSEL_SPECIAL = "//h1[@class='portlet-title']/span[contains(text(),'OUR SPECIAL OFFERS')]";
+    String GOOGLE_PLAY_HEADER = "//*[text()='Demo ICT4APPS SERIES BASIC']";
+    String GOOGLE_PLAY_INSTALL_BUTTON = "//div[@class='details-actions-right']//button[@class='price buy id-track-click id-track-impression']";
+
+    //TODO: ///////////////////////////////////////////WELCOME PAGE ////////////////////////////////////////////////////
+
+    String WELCOME_PAGE_LOGOTYPE = "//*[@class='logo custom-logo']";
+    String WELCOME_HEADER_GOOGLEPLAYLINK = "//div[@class='slogan-mobile-data']/a[1]";
+    String WELCOME_HEADER_APPSTORELINK = "//div[@class='slogan-mobile-data']/a[2]";
     String CONTACT_US_HEADER = "//h1[@class='portlet-title']/span[contains(text(),'Contacts')]";
 
-    ////////////////////////////////////////// LANGUAGE DROPDOWN MENU //////////////////////////////////////////
+
+    //TODO: LANGUAGE DROPDOWN MENU
     String LANGUAGE_DROPDOWN = "//div/select";
     String LANGUAGE_DROPDOWN_OPTION = "//option[contains(text(),'$1')]";
 
-////////////////////////////////////////// SPECIAL OFFERS IMAGE CAROUSEL //////////////////////////////////////////
+//TODO: SPECIAL OFFERS IMAGE CAROUSEL
     String IMAGE_CAROUSEL_ITEM = "//div[@data-slick-index='$1']//img";
     String IMAGE_CAROUSEL_TITLE = "//div[@data-slick-index='$1']//h3/a";
     String IMAGE_CAROUSEL_DESCRIPTION = "//div[@data-slick-index='$1']//div[@id='latestDesc']";
@@ -142,4 +150,20 @@ public interface ILocators {
     String SIGN_IN_ERROR_MESSAGE = "//label[text()='$1']/../div/div";
     String SIGN_IN_ERROR_MESSAGE_REQUEST = "//div[text()=' Your request failed to complete. ']";
     String SIGN_IN_ERROR_MESSAGE_TRY_AGAIN = "//*[text()=' Authentication failed. Please try again. ']";
+    String SIGN_IN_CREATE_ACCOUNT_LINK = "//*[text()='Create Account']";
+    String SIGN_IN_HEADER = "//span[@class='portlet-title-text']";
+
+    //TODO://////////////////////////////////////////CREATE ACCOUNT PAGE////////////////////////////////////////////////
+    String CREATE_ACCOUNT_HEADER = "//*[text()='Create Account']";
+    String CREATE_ACCOUNT_SAVE_BUTTON = "//*[text()=' Save ']";
+    String CREATE_ACCOUNT_INPUT_FIELD = "//label[contains(text(),'First Name ')]/../input";
+    String CREATE_ACCOUNT_ERROR_MESSAGE = "//label[contains(text(),'$1')]/..//div[@class='required']";
+    String CREATE_ACCOUNT_ERROR_MESSAGE_EMAIL = "//label[contains(text(),' Email Address ')]/..//div[@class='email']";
+
+    //TODO:DATE-PICKER
+    String CREATE_ACCOUNT_DATE_PICKER = ".//*[@id='_58_birthday']";
+    String CREATE_ACCOUNT_DATE_PICKER_RIGHT_ARROW = "//*[@aria-label='Go to $1 month']";
+    String CREATE_ACCOUNT_DATE_PICKER_CURRENT_DATE = ".//*[@class='yui3-u yui3-calendar-header-label']";
+    String CREATE_ACCOUNT_DATE_PICKER_CALENDAR_DATE = "//*[@ aria-selected='true' AND text()='$1']";
+    String CREATE_ACCOUNT_DATE_PICKER_VALUE = "//*[@value='01/01/1970']";
 }

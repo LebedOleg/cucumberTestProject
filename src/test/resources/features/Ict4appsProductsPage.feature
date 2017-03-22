@@ -4,7 +4,7 @@ Feature: Products Page
     Given the user is on products page
     When the user click on "Products" link
 
-  Scenario Outline: test1
+  Scenario Outline: test9
     Then After click on  of "<item>" page with description should have - title
     Then After click on  of "<item>" page with description should have - image
     Then After click on  of "<item>" page with description should have - description
@@ -14,7 +14,7 @@ Feature: Products Page
     |6   |
     |12  |
 
-  Scenario Outline: 2
+  Scenario Outline: 10
     When the user click on "VKontakte" icon  in "<Number of product>" product
     Then page should contain "http://oauth.vk.com" part in URL
 #    When the user click on "Facebook" icon  in "1" product
@@ -33,7 +33,7 @@ Feature: Products Page
     |6                |
     |12               |
 
-  Scenario Outline: 3
+  Scenario Outline: 11
     When the user click on pages dropdown menu
     When the user select "<Number of item>" item in pages dropdown menu
     Then label that showing number of results should change to "<Expected state>"
@@ -43,7 +43,7 @@ Feature: Products Page
     |4             |Showing 37 - 48 Of 98 Results |
     |9             |Showing 97 - 98 Of 98 Results |
 
-   Scenario Outline: 4
+   Scenario Outline: 12
      When the user click on items per page dropdown menu
      When the user select "<Number of showing items>" item in items per page dropdown menu
      Then label that showing number of results should change to "<Expected state>"
@@ -55,12 +55,12 @@ Feature: Products Page
      |96                     |Showing 1 - 96 Of 98 Results |
 
 
-  Scenario: test2
+  Scenario: test13
       When the user open  product that have three images, "5" product in "Appetizers" category
       When the user click on main image in product description page
       Then Close button and right arrow should be at image gallery
 
-    Scenario: test3
+    Scenario: test14
       When the user open  product that have three images, "5" product in "Appetizers" category
       When the user click on main image in product description page
       Then image gallery should be close after click on close button
@@ -77,13 +77,13 @@ Feature: Products Page
       |Last →   |Showing 97 - 98 Of 98 Results |
       |← First  |Showing 1 - 12 Of 98 Results  |
 
-  Scenario: 5
+  Scenario: 15
     When the user click on "th-large" view icon
     Then products list should change it's view on grid
    When the user click on "list" view icon
     Then products list should change it's view on list
 
-    Scenario: test12
+    Scenario: test16
       When the user click on search button
       Then search page should have search field
       Then search page should have scope dropdown menu

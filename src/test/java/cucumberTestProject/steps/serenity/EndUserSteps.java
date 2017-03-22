@@ -1,5 +1,6 @@
 package cucumberTestProject.steps.serenity;
 
+import cucumberTestProject.ILocators;
 import cucumberTestProject.pages.*;
 import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.annotations.Step;
@@ -10,8 +11,8 @@ import java.util.Map;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsString;
+import static org.hamcrest.Matchers.equalToIgnoringWhiteSpace;
 import static org.hamcrest.Matchers.hasItem;
-
 
 
 public class EndUserSteps {
@@ -22,6 +23,7 @@ public class EndUserSteps {
     BlogsPage blogsPage;
     ContactUsPage contactUsPage;
     SignInPage signInPage;
+    CreateNewAccountPage createNewAccountPage;
 
 
     @Step
@@ -81,10 +83,7 @@ public class EndUserSteps {
         Assert.assertEquals(arg0, welcomePage.check_translation_link(arg1));
     }
 
-    @Step
-    public void move_mouse_on_picture(String arg0) {
-        welcomePage.moveMouseOnItem(arg0);
-    }
+
 
 
     @Step
@@ -92,39 +91,6 @@ public class EndUserSteps {
         welcomePage.clickOnSignInLink();
     }
 
-    @Step
-    public void click_sign_in_button() {
-        welcomePage.clickOnSignInButton();
-    }
-
-    @Step
-    public void error_message_is_appears(String arg0) {
-        welcomePage.errorMessageIsAppear(arg0);
-    }
-
-    @Step
-    public void error_message_is_appear(String arg0, String arg1) {
-        error_message_is_appears(arg0);
-        error_message_is_appears(arg1);
-    }
-
-    @Step
-    public void clearEnterAndClickOnSignInButton(String arg0, String arg1) {
-        clear_value_in_field(arg0);
-        enter_value_in_field(arg0, arg1);
-        click_sign_in_button();
-    }
-
-
-    @Step
-    public void clear_value_in_field(String arg0) {
-        welcomePage.clearValueInField(arg0);
-    }
-
-    @Step
-    public void enter_value_in_field(String arg0, String arg1) {
-        welcomePage.enterValueInField(arg0, arg1);
-    }
 
     @Step
     public void move_mouse_cursor_on_item(String arg0) {
@@ -184,7 +150,7 @@ public class EndUserSteps {
     }
 
 
-////////////////////////////////////////////            ////////////////////////////////////////
+    ////////////////////////////////////////////            ////////////////////////////////////////
     @Step
     public void pageWithItemDescriptionShouldHaveTitleImageDescription() {
         itemShouldHaveTitle();
@@ -208,7 +174,7 @@ public class EndUserSteps {
     }
 
 
- ///////////////////////////////////////////               ???????????????????????????????????/
+    ///////////////////////////////////////////               ???????????????????????????????????/
     @Step
     public void afterClickOnOfPageWithDescriptionShouldHaveTitle(String arg0) {
         productsPage.theUserClickOnTitleOfProduct(arg0);
@@ -232,7 +198,8 @@ public class EndUserSteps {
         productsPage.goBack();
 
     }
-///////////////////////////////////////////////////////////////////////////////////////////////////
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////////
     @Step
     public void theUserOpenProductThatHaveThreeImages(String arg0, String arg1) {
         productsPage.clickOnCategory(arg1);
@@ -255,7 +222,8 @@ public class EndUserSteps {
         itemShouldHaveImage();
         itemShouldHaveDescription();
     }
-  //////////////////////////////////////////////////////////////////////////
+
+    //////////////////////////////////////////////////////////////////////////
     @Step
     public void theUserClickOnPagesDropdownMenu() {
         productsPage.theUserClickOnPagesDropdownMenu();
@@ -289,9 +257,10 @@ public class EndUserSteps {
     public void theUserClickOnSearchButton() {
         productsPage.theUserClickOnSearchButton();
     }
+
     @Step
     public void searchPageShouldHaveSearchField() {
-     Assert.assertTrue("", productsPage.searchPageShouldHaveSearchField());
+        Assert.assertTrue("", productsPage.searchPageShouldHaveSearchField());
     }
 
     @Step
@@ -308,7 +277,7 @@ public class EndUserSteps {
     @Step
     public void pageShouldContainPartInURL(String arg0) {
         productsPage.switchWindow(1);
-     //   Assert.assertTrue( productsPage.getCurrentUrl().contains(arg0));
+        //   Assert.assertTrue( productsPage.getCurrentUrl().contains(arg0));
         Assert.assertThat("", productsPage.getCurrentUrl(), containsString(arg0));
         productsPage.switchWindow(0);
     }
@@ -328,6 +297,7 @@ public class EndUserSteps {
     public void theUserIsOnSpecialOffersPage() {
         specialOffersPage.open();
     }
+
     @Step
 
     public void theUserIsOnProductsPage() {
@@ -408,6 +378,7 @@ public class EndUserSteps {
     public void theUserClickOnTitleOfTheBlogEntry(String arg0) {
         blogsPage.theUserClickOnTitleOfTheBlogEntry(arg0);
     }
+
     @Step
     public void entryShouldContainAllRequiredElements() {
         entryShouldContainImage();
@@ -420,7 +391,7 @@ public class EndUserSteps {
 
     @Step
     public void entryShouldContainImage() {
-       Assert.assertTrue(blogsPage.entryShouldContainImage());
+        Assert.assertTrue(blogsPage.entryShouldContainImage());
     }
 
     @Step
@@ -440,7 +411,7 @@ public class EndUserSteps {
 
     @Step
     public void entryShouldContainFacebookLink() {
-       // Assert.assertTrue(blogsPage.entryShouldContainFacebookLink());
+        // Assert.assertTrue(blogsPage.entryShouldContainFacebookLink());
         blogsPage.entryShouldContainFacebookLink();
     }
 
@@ -462,7 +433,6 @@ public class EndUserSteps {
     public void theUserIsOnBlogsPage() {
         blogsPage.open();
     }
-
 
 
     @Step
@@ -490,9 +460,9 @@ public class EndUserSteps {
 
     @Step
     public void searchPageShouldBeOpened() {
-       Assert.assertTrue(productsPage.searchPageShouldHaveScopeDropdownMenu());
-       Assert.assertTrue(productsPage.searchPageShouldHaveSearchButton());
-       Assert.assertTrue(productsPage.searchPageShouldHaveSearchField());
+        Assert.assertTrue(productsPage.searchPageShouldHaveScopeDropdownMenu());
+        Assert.assertTrue(productsPage.searchPageShouldHaveSearchButton());
+        Assert.assertTrue(productsPage.searchPageShouldHaveSearchField());
     }
 
     @Step
@@ -536,16 +506,17 @@ public class EndUserSteps {
 
     @Step
     public void errorMessageAppearsAboveTextbox(String arg0) {
-       Assert.assertTrue(contactUsPage.errorMessageAppearsAboveTextbox(arg0));
+        Assert.assertTrue(contactUsPage.errorMessageAppearsAboveTextbox(arg0));
     }
 
     @Step
     public void errorMessageAppearsAboveEntryArea(String arg0) {
         Assert.assertTrue(contactUsPage.errorMessageAppearsAboveEntryArea(arg0));
     }
+
     @Step
     public void enterInTextbox(String arg0, String arg1) {
-        contactUsPage.enterInTextbox(arg0,arg1);
+        contactUsPage.enterInTextbox(arg0, arg1);
     }
 
     @Step
@@ -557,15 +528,17 @@ public class EndUserSteps {
     public void errorMessageAboveAntryAreaShouldDisappear(String arg0) {
         Assert.assertFalse(contactUsPage.errorMessageAboveAntryAreaShouldDisappear(arg0));
     }
+
     @Step
     public void enterInEntryArea(String arg0, String arg1) {
-        contactUsPage.enterInEntryArea(arg0,arg1);
+        contactUsPage.enterInEntryArea(arg0, arg1);
     }
 
     @Step
     public void theUserClickOn(String arg0) {
-           signInPage.theUserClickOn(arg0);
+        signInPage.theUserClickOn(arg0);
     }
+
     @Step
     public void userIsOnSignInPage() {
         signInPage.open();
@@ -578,12 +551,12 @@ public class EndUserSteps {
 
     @Step
     public void errorMessageShouldAppearAboveTextbox(String arg0) {
-       Assert.assertTrue(signInPage.errorMessageShouldAppearAboveTextbox(arg0));
+        Assert.assertTrue(signInPage.errorMessageShouldAppearAboveTextbox(arg0));
     }
 
     @Step
     public void enterInTextboxOnSIGNINPage(String arg0, String arg1) {
-        signInPage.enterInTextboxOnSIGNINPage(arg0,arg1);
+        signInPage.enterInTextboxOnSIGNINPage(arg0, arg1);
     }
 
     @Step
@@ -599,6 +572,106 @@ public class EndUserSteps {
     @Step
     public void pleaseTryAgainErrorMessageShouldAppear() {
         Assert.assertTrue(signInPage.pleaseTryAgainErrorMessageShouldAppear());
+    }
+
+    @Step
+    public void theUserClickOnCreateAccountLink() {
+        signInPage.theUserClickOnCreateAccountLink();
+    }
+
+    @Step
+    public void createAccountPageShouldBeOpen() {
+        Assert.assertTrue(signInPage.createAccountPageShouldBeOpen());
+    }
+
+    @Step
+    public void theUserIsOnCreateAccountPage() {
+        createNewAccountPage.open();
+    }
+
+    @Step
+    public void theUserClickOnSAVEButton() {
+        createNewAccountPage.theUserClickOnSAVEButton();
+    }
+
+    @Step
+    public void errorMessageShouldAppearAtTheRightOfTextbox(String arg0) {
+        Assert.assertTrue(createNewAccountPage.errorMessageShouldAppearAtTheRightOfTextbox(arg0));
+    }
+
+    public void theUserClickOnDatePicker() {
+        createNewAccountPage.theUserClickOnDatePicker();
+    }
+
+    @Step
+    public void theUserClickOnArrowLink(String arg0) {
+        createNewAccountPage.theUserClickOnArrowLink(arg0);
+    }
+
+    public void dateShouldChangeTo(String arg0) {
+        Assert.assertThat(createNewAccountPage.dateShouldChangeTo(), equalToIgnoringWhiteSpace(arg0));
+    }
+
+    public void theUserClickOnCalendarDay(String arg0) {
+        createNewAccountPage.theUserClickOnCalendarDay(arg0);
+    }
+
+    @Step
+    public void dateInTextboxShouldChangeTo(String arg0) {
+        Assert.assertTrue(createNewAccountPage.dateInTextboxShouldChangeTo(arg0));
+    }
+
+    @Step
+    public void theUserClickOnSiteLogotype() {
+        welcomePage.theUserClickOnSiteLogotype();
+    }
+
+
+    @Step
+    public void pageShouldHaveURL(String arg0) {
+        Assert.assertEquals(productsPage.getCurrentUrl(), arg0);
+    }
+
+    @Step
+    public void pageHaveRightHeader() {
+        Assert.assertTrue(welcomePage.pageHaveRightHeader());
+    }
+
+    @Step
+    public void pageHaveTextbox(String arg0) {
+        Assert.assertTrue(welcomePage.pageHaveTextbox(arg0));
+    }
+
+    @Step
+    public void theUserClickOnGOOGLEPLAYLink() {
+        welcomePage.theUserClickOnGOOGLEPLAYLink();
+    }
+    @Step
+    public void pageShouldHaveTitle(String arg0) {
+        Assert.assertEquals(welcomePage.pageShouldHaveTitle(), arg0);
+    }
+
+    public void pageShouldHaveInstallButton() {
+        Assert.assertTrue(welcomePage.pageShouldHaveInstallButton());
+    }
+
+    @Step
+    public void theUserClickOnTitleOf(String arg0) {
+        welcomePage.theUserClickOnTitleOf(arg0);
+    }
+
+    @Step
+    public void theUserClickOnMORELinkOf(String arg0) {
+        welcomePage.theUserClickOnMORELinkOf(arg0);
+    }
+@Step
+    public void theUserClickOnOfCategoryImageCarousel(String arg0) {
+        welcomePage.theUserClickOnOfCategoryImageCarousel(arg0);
+    }
+
+    @Step
+    public void urlShouldContainPart(String arg0) {
+        Assert.assertThat(welcomePage.getURLCurrent(), containsString(arg0));
     }
 }
 

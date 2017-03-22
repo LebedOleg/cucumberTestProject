@@ -3,7 +3,7 @@ Feature: Contact Us page
   Background:
     Given User is on Contact Us page
 
-   Scenario: test1
+   Scenario: test22
      When the user click on SEND button
      Then error message appears above " Name * " textbox
      Then error message appears above " Email * " textbox
@@ -23,8 +23,8 @@ Feature: Contact Us page
      Then error message above " Comments " entry area should disappear
 #Text Verification (Required)
 
-    Scenario Outline: test2
-      When Enter "<value>" in " Name * " textbox
-      When the user click on SEND button
-      Then
-      Examples:
+#    Scenario Outline: test23
+#      When Enter "<value>" in " Name * " textbox
+#      When the user click on SEND button
+#      Then
+#      Examples:

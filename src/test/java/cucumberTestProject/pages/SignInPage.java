@@ -45,6 +45,14 @@ public class SignInPage extends PageObject {
         return $(ILocators.SIGN_IN_ERROR_MESSAGE_TRY_AGAIN).isPresent();
     }
 
+    public void theUserClickOnCreateAccountLink() {
+        $(ILocators.SIGN_IN_CREATE_ACCOUNT_LINK).click();
+    }
+
+    public boolean createAccountPageShouldBeOpen() {
+        return $(ILocators.CREATE_ACCOUNT_HEADER).isPresent();
+    }
+
     //   return $(ILocators.SIGN_IN_INPUT_FIELD.replace("$1",arg0)).isEmpty();
 
 }

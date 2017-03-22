@@ -1,4 +1,5 @@
 package cucumberTestProject.pages;
+
 import cucumberTestProject.ILocators;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.pages.PageObject;
@@ -18,7 +19,6 @@ import java.util.concurrent.TimeUnit;
 @DefaultUrl("http://88.198.7.89:8100/")
 
 public class WelcomePage extends PageObject {
-
 
 
     List<String> languageList = new ArrayList<>();
@@ -62,7 +62,6 @@ public class WelcomePage extends PageObject {
     }
 
 
-
     public String check_translation_link(String arg1) {
         return getDriver().findElement(By.xpath(ILocators.WELCOME_HEADER_MENULINK.replace("$1", arg1))).getText();
 
@@ -71,34 +70,13 @@ public class WelcomePage extends PageObject {
     public void moveMouseOnItem(String arg0) {
         Actions actions = new Actions(getDriver());
         actions.moveToElement($(ILocators.IMAGE_CAROUSEL_ITEM.replace("$1", arg0))).build().perform();
-        waitABit(1500);
     }
-
 
 
     public void clickOnSignInLink() {
         $(ILocators.SIGN_IN).click();
     }
 
-    public void clickOnSignInButton() {
-        $(ILocators.SIGN_IN_BUTTON).click();
-    }
-
-    public boolean errorMessageIsAppear(String arg0) {
-        withTimeoutOf(16, TimeUnit.SECONDS).waitFor(ExpectedConditions.presenceOfElementLocated(By.xpath(ILocators.ERROR_MESSAGE_REQUIRED.replace("$1", arg0))));
-        return $(ILocators.ERROR_MESSAGE_REQUIRED.replace("$1", arg0)).isPresent();
-    }
-
-
-    public void clearValueInField(String arg0) {
-        $(ILocators.SIGN_IN_INPUT.replace("$1", arg0)).clear();
-    }
-
-
-    public void enterValueInField(String arg0, String arg1) {
-        $(ILocators.SIGN_IN_INPUT.replace("$1", arg0)).sendKeys(arg1);
-
-    }
 
     public void moveMouseCursorOnItem(String arg0) {
         Integer integer;
@@ -133,9 +111,9 @@ public class WelcomePage extends PageObject {
     }
 
     public void clickClick() {
-        for (int i=0; i<100; i++) {
-            new Actions(getDriver()).dragAndDrop($(ILocators.From1),$(ILocators.To1)).perform();
-            new Actions(getDriver()).dragAndDrop($(ILocators.From2),$(ILocators.To2)).perform();
+        for (int i = 0; i < 100; i++) {
+            new Actions(getDriver()).dragAndDrop($(ILocators.From1), $(ILocators.To1)).perform();
+            new Actions(getDriver()).dragAndDrop($(ILocators.From2), $(ILocators.To2)).perform();
 
         }
     }
@@ -148,6 +126,7 @@ public class WelcomePage extends PageObject {
         $(ILocators.CONTACT_US_TEXTBOX).sendKeys(FirstName);
 
     }
+
     public static String generateString(Random rng, String characters, int length) //creating random string
     {
         char[] text = new char[length]; // Create list of chars
@@ -183,7 +162,7 @@ public class WelcomePage extends PageObject {
 
     public void abcd() {
         List<WebElementFacade> list = findAll(ILocators.CATEGORY_IMAGE_CAROUSEL);
-        for (WebElement element : list ) {
+        for (WebElement element : list) {
             System.out.print(element);
 //            Actions actions = new Actions(getDriver());
 //
@@ -213,6 +192,48 @@ public class WelcomePage extends PageObject {
 
     public void clickOnTitleOfInNewsFeed(String arg0) {
         $(ILocators.NEWS_FEED_ITEM_TITLE.replace("$1", arg0)).click();
+    }
+
+    public void theUserClickOnSiteLogotype() {
+        $(ILocators.WELCOME_PAGE_LOGOTYPE).click();
+    }
+
+
+    public boolean pageHaveRightHeader() {
+        return $(ILocators.SIGN_IN_HEADER).isPresent();
+    }
+
+    public boolean pageHaveTextbox(String arg0) {
+        return $(ILocators.SIGN_IN_INPUT_FIELD.replace("$1",arg0)).isPresent();
+    }
+
+    public void theUserClickOnGOOGLEPLAYLink() {
+        $(ILocators.WELCOME_HEADER_GOOGLEPLAYLINK).click();
+    }
+
+    public String pageShouldHaveTitle() {
+        return $(ILocators.GOOGLE_PLAY_HEADER).getText();
+    }
+
+    public boolean pageShouldHaveInstallButton() {
+        return $(ILocators.GOOGLE_PLAY_INSTALL_BUTTON).isPresent();
+    }
+
+    public void theUserClickOnTitleOf(String arg0) {
+        $(ILocators.IMAGE_CAROUSEL_TITLE.replace("$1",arg0)).click();
+    }
+
+    public void theUserClickOnMORELinkOf(String arg0) {
+        $(ILocators.IMAGE_CAROUSEL_MORE.replace("$1", arg0)).click();
+    }
+
+    public void theUserClickOnOfCategoryImageCarousel(String arg0) {
+        $(ILocators.CATEGORY_IMAGE_CAROUSEL.replace("$1",arg0)).click();
+    }
+
+    public String getURLCurrent() {
+        String url = getDriver().getCurrentUrl();
+        return url;
     }
 }
 

@@ -32,4 +32,5 @@ Feature: Sign In page
     Then Please try again error message should appear
 
   Scenario: test5
-    When
+    When the user click on Create Account link
+    Then Create Account page should be open

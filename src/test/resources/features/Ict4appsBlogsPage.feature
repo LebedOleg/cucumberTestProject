@@ -4,7 +4,7 @@ Feature: Blogs page
   Background:
     Given the user is on Blogs page
 
-  Scenario Outline: test1
+  Scenario Outline: test19
     When the user click on title of the "<number of blog>" blog entry
     Then Entry should contain all required elements
   #  Click on all elements in BLOG ENTRY DESCRIPTION
@@ -20,7 +20,7 @@ Feature: Blogs page
       | 10             |
       | 19             |
 
-  Scenario Outline: test2
+  Scenario Outline: test20
     When the user click on title of the "<number of blog>" blog entry
     When the user click on View Original Post link
     Then Website contains title of post that was chosen
@@ -36,7 +36,7 @@ Feature: Blogs page
       | 11             |
       | 19             |
 
-  Scenario: test3
+  Scenario: test21
     When the user enter value in search field
     When the user press Enter button
     Then Search page should be opened

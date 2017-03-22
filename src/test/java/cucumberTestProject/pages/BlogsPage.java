@@ -7,10 +7,12 @@ import net.thucydides.core.pages.PageObject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import javax.swing.*;
 
 import java.security.Key;
+import java.util.concurrent.TimeUnit;
 
 import static net.serenitybdd.core.Serenity.*;
 import static org.yecht.LevelStatus.header;
@@ -88,7 +90,9 @@ public class BlogsPage extends PageObject {
 
 
     public boolean websiteContainsTitleOfPostThatWasChosen() {
+        withTimeoutOf(16, TimeUnit.SECONDS).waitFor(ExpectedConditions.presenceOfElementLocated(By.xpath(ILocators.HEADER_ON_SOURCE_PAGE.replace("$1", header))));
         boolean a = $(ILocators.HEADER_ON_SOURCE_PAGE.replace("$1", header)).isPresent();
+//        boolean a = $(ILocators.HEADER_ON_SOURCE_PAGE.replace("$1", header)).isPresent();
         getDriver().close();
         return a;
     }
