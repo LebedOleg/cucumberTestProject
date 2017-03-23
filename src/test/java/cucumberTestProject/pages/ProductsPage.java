@@ -16,6 +16,7 @@ import java.sql.Driver;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created by userqa on 14.03.17.
@@ -101,7 +102,7 @@ public class ProductsPage extends PageObject {
     }
 
     public void theUserSelectItemInItemsPerPageDropdownMenu(String arg0) {
-        $(ILocators.PRODUCTS_PAGE_ITEMS_PER_PAGE_DROPDOWN_ITEM.replace("$1", arg0)).click();
+        $(ILocators.SPECIAL_OFFERS_PAGE_ITEMS_PER_PAGE_DROPDOWN_ITEM.replace("$1", arg0)).click();
     }
 
     public void theUserClickOnSearchButton() {
@@ -131,7 +132,6 @@ public class ProductsPage extends PageObject {
     public String getCurrentUrl() {
         String url = getDriver().getCurrentUrl();
         getDriver().close();
-        waitABit(1500);
         return url;
     }
 
@@ -150,6 +150,48 @@ public class ProductsPage extends PageObject {
 
     public boolean titleOfProducIsVisible() {
       return $(ILocators.PRODUCTS_PAGE_TITLE_OF_ITEM.replace("$1", "1")).isVisible();
+    }
+
+    public boolean pageShouldContainInFirstPartOfBreadcrumb(String arg0) {
+        return $(ILocators.BREADCRUMB_FIRST_ITEM.replace("$1",arg0)).isPresent();
+    }
+
+    public boolean pageShouldContainInSecondPartOfBreadcrumb(String arg0) {
+        return $(ILocators.BREADCRUMB_FIRST_ITEM.replace("$1",arg0)).isPresent();
+    }
+
+    public void theUserClickOnThCategoryInCategoryList(String arg0) {
+        $(ILocators.CATEGORY_LIST_ITEM.replace("$1",arg0)).click();
+    }
+
+    public boolean pageShouldHaveInThirdPartOfBreadcrumb(String arg0) {
+       return  $(ILocators.BREADCRUMB_CATEGORY.replace("$1",arg0)).isPresent();
+    }
+
+    public void theUserOpenListWithSubcategoriesOfCategory(String arg0) {
+        Actions actions = new Actions(getDriver());
+        actions.moveToElement($(ILocators.CATEGORY_LIST_CATEGORY_FOLDER)).build().perform();
+        $(ILocators.CATEGORY_LIST_SUBCATEGORY_LIST).findElement(By.xpath(ILocators.CATEGORY_LIST_SUBCATEGORY_ITEM2)).click();
+    }
+
+    public void theUserClickOnSubcategory(String arg0) {
+        $(ILocators.CATEGORY_LIST_SUBCATEGORY_ITEM.replace("$1",arg0)).click();
+    }
+
+    public boolean pageShouldHaveInFourthPartOfBreadcrumb(String arg0) {
+        return $(ILocators.BREADCRUMB_CATEGORY.replace("$1",arg0)).isPresent();
+    }
+
+    public String getTextInBreadCrumb() {
+        return $(ILocators.BREADCRUMB_LAST).getText();
+    }
+
+    public String getNameOfProduct() {
+        return $(ILocators.PRODUCTS_DESCRIPTION_PAGE_TITLE).getText();
+    }
+
+    public void theUserClickOnPartOfBreadcrumb(String arg0) {
+        $(ILocators.BREADCRUMB_FIRST_ITEM.replace("$1",arg0)).click();
     }
 
 //    public void jsExecuter() {

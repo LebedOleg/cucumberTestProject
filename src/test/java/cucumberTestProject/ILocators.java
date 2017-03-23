@@ -5,17 +5,19 @@ public interface ILocators {
 
 
     String PAGE_BREADCRUMB = "//a[contains(text(),'$1')]";
-    String WELCOME_HEADER_MENULINK = "(//span[contains(text(),'$1')])[1]";
     String WELCOME_IMAGECAROUSEL_SPECIAL = "//h1[@class='portlet-title']/span[contains(text(),'OUR SPECIAL OFFERS')]";
     String GOOGLE_PLAY_HEADER = "//*[text()='Demo ICT4APPS SERIES BASIC']";
     String GOOGLE_PLAY_INSTALL_BUTTON = "//div[@class='details-actions-right']//button[@class='price buy id-track-click id-track-impression']";
 
     //TODO: ///////////////////////////////////////////WELCOME PAGE ////////////////////////////////////////////////////
 
+    String WELCOME_HEADER_MENULINK = "(//span[contains(text(),'$1')])[$2]";
     String WELCOME_PAGE_LOGOTYPE = "//*[@class='logo custom-logo']";
-    String WELCOME_HEADER_GOOGLEPLAYLINK = "//div[@class='slogan-mobile-data']/a[1]";
-    String WELCOME_HEADER_APPSTORELINK = "//div[@class='slogan-mobile-data']/a[2]";
+    String WELCOME_HEADER_GOOGLEPLAYLINK = "(//img[@alt='Android app on Google Play'])[$1]";
+    String WELCOME_HEADER_APPSTORELINK = "//img[@alt='Available on the App Store']";
     String CONTACT_US_HEADER = "//h1[@class='portlet-title']/span[contains(text(),'Contacts')]";
+    String WELCOME_PAGE_SOCIAL_BLOCK_FOOTER = ".//*[@id='atstbx']/div";
+    String WELCOME_PAGE_FOOTER_SOCIAL_ICON = "(.//*[@id='atstbx']/div//span[@class='at-icon-wrapper'])[$1]";
 
 
     //TODO: LANGUAGE DROPDOWN MENU
@@ -55,6 +57,19 @@ public interface ILocators {
 
     //TODO://////////////////////////////////////////////////PRODUCTS PAGE//////////////////////////////////////////////////
 
+    //TODO:CATEGORY LIST
+    String CATEGORY_LIST_ITEM = "//li//a[text()='$1']";
+    String CATEGORY_LIST_SUBCATEGORY_LIST = "//span[text()='$1']/../a[text()='►']";
+    String CATEGORY_LIST_SUBCATEGORY_ITEM = "//a[text()='$1']";
+    String CATEGORY_LIST_CATEGORY_FOLDER = "(//li[contains(@class,'jqtree_common jqtree-folder')])[1]";
+    String CATEGORY_LIST_SUBCATEGORY_ITEM2 = ".//a[text()='►']";
+
+
+    //TODO: BREADCRUMB
+    String BREADCRUMB_FIRST_ITEM = "//*[text()='$1']";
+    String BREADCRUMB_CATEGORY = "//ul[@aria-label='Breadcrumb']/li[text()='$1']";
+    String BREADCRUMB_LAST = "//li[contains(@class,'last breadcrumb')]";
+
     //TODO: PRODUCTS PAGE, PRODUCTS LIST
     String PRODUCTS_PAGE_PRODUCTS_LIST = "//li[@class='b-product gallery--item gallery-list--item ']";
 
@@ -82,14 +97,14 @@ public interface ILocators {
     String IMAGE_GALLERY_LEFT_ARROW = "//a[contains(text(),'‹')]";
 
     //TODO: PRODUCTS PAGE, PAGES DROPDOWN MENU
-    String PRODUCTS_PAGE_PAGES_DROPDOWNMENU = "//a[@id='_PRODUCT_PORTLET_WAR_ict4appsportlet_kldx_column4_0_menu']/span";
+    String PRODUCTS_PAGE_PAGES_DROPDOWNMENU = "(//span [@class=\"lfr-icon-menu-text\"])[1]";
     String PRODUCTS_PAGE_PAGES_DROPDOWNMENU_ITEM = "//a[@id='_PRODUCT_PORTLET_WAR_ict4appsportlet_kldx_column4_0_menu_$1']/span"; //Need a replace
 
     //TODO: PRODUCTS PAGE, LABEL THAT SHOWING RESULTS
     String PRODUCTS_PAGE_SHOWING_RESULTS_PAGE = "(//small)[1]";
 
     //TODO: PRODUCTS PAGE, ITEMS PER PAGE DROPDOWN MENU
-    String PRODUCTS_PAGE_ITEMS_PER_PAGE_DROPDOWN = "//a[@id='_PRODUCT_PORTLET_WAR_ict4appsportlet_tiym_column4_0_menu']/span";
+    String PRODUCTS_PAGE_ITEMS_PER_PAGE_DROPDOWN = "(//span [@class=\"lfr-icon-menu-text\"])[2]";
     String PRODUCTS_PAGE_ITEMS_PER_PAGE_DROPDOWN_ITEM = "//a[@id='_PRODUCT_PORTLET_WAR_ict4appsportlet_tiym_column4_0_menu_$1']/span";  //Need a replace
 
     //TODO: PRODUCTS PAGE, PAGINATION BUTTON
@@ -103,9 +118,16 @@ public interface ILocators {
     //TODO: SEARCH PAGE ELEMENTS
     String SEARCH_PAGE_SEARCH_FIELD = "//*[@id='_3_keywords']";
     String SEARCH_PAGE_SCOPE_DROPDOWN = "//select[@title='selected_scope']";
+    String SEARCH_PAGE_OPTION = "//option[contains(text(),'$1')]";
     String SEARCH_PAGE_SEARCH_BUTTON = "//button[contains(text(),'Search')]";
+    String SEARCH_PAGE_CLEAR_BUTTON = ".//*[text()=' Clear ']";
+    String SEARCH_PAGE_BLOG_ENTRY = "//tbody[@class='table-data']//span[contains(text(),'$1')]";
+    String SEARCH_PAGE_RESULTS_OF_SEARCH = "//tbody[@class='table-data']";
+    String SEARCH_PAGE_CHOSEN_BLOG_ENTRY = "(//tbody[@class='table-data']//span[contains(text(),'$2')])[$1]";
 
     //TODO://///////////////////////////////////////////SPECIAL OFFERS PAGE///////////////////////////////////////////////////////////////////
+    String SPECIAL_OFFERS_PAGE_PAGES_DROPDOWNMENU_ITEM = "//a[@id='_PRODUCT_PORTLET_WAR_ict4appsportlet_kldx_column1_1_menu_$1']/span";
+    String SPECIAL_OFFERS_PAGE_ITEMS_PER_PAGE_DROPDOWN_ITEM = "//a[@id='_PRODUCT_PORTLET_WAR_ict4appsportlet_tiym_column1_1_menu_$1']/span";
 
     //TODO:////////////////////////////////////////////BLOGS PAGE///////////////////////////////////////////////////////
 
@@ -128,6 +150,7 @@ public interface ILocators {
     String BLOG_DESCRIPTION_PAGE_FACEBOOK_FRAME = "//iframe[@title='fb:like Facebook Social Plugin']";
     String BLOG_DESCRIPTION_PAGE_PREVIOUS_BUTTON = "//a[contains(text(),'Previous')]";
     String BLOG_DESCRIPTION_PAGE_NEXT_BUTTON = "//a[contains(text(),'Next')]";
+    String BLOG_DESCRIPTION_PAGE_SOCIAL_ICON = "//li[contains(@class,'$1')]";
 
 
     String HEADER_ON_SOURCE_PAGE = "//*[contains(text(),'$1')]"; //TODO: fsfafasfasfasfasfasfasfasfasfas

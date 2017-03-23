@@ -52,24 +52,6 @@ public class BlogsPage extends PageObject {
         return $(ILocators.BLOG_DESCRIPTION_PAGE_ORIGINAL_POST).isPresent();
     }
 
-    public boolean entryShouldContainTweetLink() {
-        waitABit(1500);
-        getDriver().switchTo().frame($(ILocators.BLOG_DESCRIPTION_PAGE_TWEET_FRAME));
-        return getDriver().findElement(By.xpath(ILocators.BLOG_DESCRIPTION_PAGE_TWEET_LINK)).isDisplayed();
-        //     return $(ILocators.BLOG_DESCRIPTION_PAGE_TWEET_LINK).isPresent();
-    }
-
-    public void entryShouldContainFacebookLink() {
-        waitABit(1500);
-        Actions actions = new Actions(getDriver());
-        actions.moveToElement(find(By.xpath(ILocators.BLOG_DESCRIPTION_PAGE_FACEBOOK_FRAME))).build().perform();
-        getDriver().findElement(By.xpath(ILocators.BLOG_DESCRIPTION_PAGE_FACEBOOK_LINK));
-
-//        waitABit(1500);
-//        getDriver().switchTo().frame($(ILocators.BLOG_DESCRIPTION_PAGE_FACEBOOK_FRAME));
-//        return getDriver().findElement(By.xpath(ILocators.BLOG_DESCRIPTION_PAGE_FACEBOOK_LINK)).isDisplayed();
-//        return $(ILocators.BLOG_DESCRIPTION_PAGE_FACEBOOK_LINK).isPresent();
-    }
 
     public void theUserClickOnREADLinkOfTheBlogEntry(String arg0) {
         $(ILocators.BLOG_ENTRY_MORE.replace("$1", arg0)).click();
@@ -131,5 +113,10 @@ public class BlogsPage extends PageObject {
     public void theUserClickOnNextLink() {
         header = $(ILocators.BLOG_DESCRIPTION_PAGE_BREADCRUMB).getText();
         $(ILocators.BLOG_DESCRIPTION_PAGE_NEXT_BUTTON).click();
+    }
+
+    public boolean entryShouldContainLinkedImage(String arg0) {
+        withTimeoutOf(16, TimeUnit.SECONDS).waitFor(ExpectedConditions.presenceOfElementLocated(By.xpath(ILocators.BLOG_DESCRIPTION_PAGE_SOCIAL_ICON.replace("$1",arg0))));
+        return $(ILocators.BLOG_DESCRIPTION_PAGE_SOCIAL_ICON.replace("$1",arg0)).isVisible();
     }
 }

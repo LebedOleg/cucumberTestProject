@@ -10,31 +10,31 @@ Feature: Lookup a definition
     Then Page should have "http://88.198.7.89:8100/welcome" URL
 
   Scenario: test2
-    When the user click on "Welcome" link
+    When the user click on "Welcome" link "1"
     Then Page should have the OUR SPECIAL OFFERS header
     Then Page should have the "Welcome - ict4apps" title
     Then Page should have "http://88.198.7.89:8100/web/guest/welcome" URL
 
   Scenario: test3
-    When the user click on "Products" link
+    When the user click on "Products" link "1"
     Then Page should have the "Products" breadcrumb
     Then Page should have the "Products - ict4apps" title
     Then Page should have "http://88.198.7.89:8100/web/guest/products" URL
 
   Scenario: test4
-    When the user click on "Special Offers" link
+    When the user click on "Special Offers" link "1"
     Then Page should have the "Special Offers" breadcrumb
     Then Page should have the "Special Offers - ict4apps" title
     Then Page should have "http://88.198.7.89:8100/web/guest/special-offers" URL
 
   Scenario: t est5
-    When the user click on "Blogs" link
+    When the user click on "Blogs" link "1"
     Then Page should have the "Blogs" breadcrumb
     Then Page should have the "Blogs - ict4apps" title
     Then Page should have "http://88.198.7.89:8100/web/guest/blogs" URL
 
   Scenario: test6
-    When the user click on "Contact Us" link
+    When the user click on "Contact Us" link "1"
     Then Page should have the CONTACTS header
     Then Page should have the "Contact Us - ict4apps" title
     Then Page should have "http://88.198.7.89:8100/web/guest/contact-us" URL
@@ -128,13 +128,64 @@ Feature: Lookup a definition
     Then Page have "password" textbox
 
   Scenario: test16
-    When the user click on GOOGLEPLAY link
+    When the user click on "1"th GOOGLEPLAY link
     Then Page should have "Demo ICT4APPS SERIES BASIC" title
     Then Page should have install button
 
 #  Scenario: test16  APPLE LINK
 
+  Scenario: test17
+    When the user click on search button
+    Then search page should have search field
+    Then search page should have scope dropdown menu
+    Then search page should have search button
 
+
+  Scenario: test18
+    When the user click on "1"th link in footer part
+    Then page should contain "https://www.facebook.com" in URL
+    When the user click on "2"th link in footer part
+    Then page should contain "https://twitter.com" in URL
+    When the user click on "3"th link in footer part
+    Then page should contain "https://www.linkedin.com" in URL
+    When the user click on "4"th link in footer part
+    Then page should contain "https://plus.google.com" in URL
+
+
+  Scenario: test19
+    When the user click on "Welcome" link "2"
+    Then Page should have the OUR SPECIAL OFFERS header
+    Then Page should have the "Welcome - ict4apps" title
+    Then Page should have "http://88.198.7.89:8100/web/guest/welcome" URL
+
+  Scenario: test20
+    When the user click on "Products" link "2"
+    Then Page should have the "Products" breadcrumb
+    Then Page should have the "Products - ict4apps" title
+    Then Page should have "http://88.198.7.89:8100/web/guest/products" URL
+
+  Scenario: test21
+    When the user click on "Special Offers" link "2"
+    Then Page should have the "Special Offers" breadcrumb
+    Then Page should have the "Special Offers - ict4apps" title
+    Then Page should have "http://88.198.7.89:8100/web/guest/special-offers" URL
+
+  Scenario: test22
+    When the user click on "Blogs" link "2"
+    Then Page should have the "Blogs" breadcrumb
+    Then Page should have the "Blogs - ict4apps" title
+    Then Page should have "http://88.198.7.89:8100/web/guest/blogs" URL
+
+  Scenario: test23
+    When the user click on "Contact Us" link "2"
+    Then Page should have the CONTACTS header
+    Then Page should have the "Contact Us - ict4apps" title
+    Then Page should have "http://88.198.7.89:8100/web/guest/contact-us" URL
+
+  Scenario: test24
+    When the user click on "2"th GOOGLEPLAY link
+    Then Page should have "Demo ICT4APPS SERIES BASIC" title
+    Then Page should have install button
 
 
 

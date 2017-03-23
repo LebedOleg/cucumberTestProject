@@ -49,4 +49,8 @@ public class SpecialOffersPage extends PageObject {
     public void goBack() {
         getDriver().navigate().back();
     }
+
+    public void theUserSelectItemInPagesDropdownMenuOnSpecialOffersPage(String arg0) {
+        $(ILocators.SPECIAL_OFFERS_PAGE_PAGES_DROPDOWNMENU_ITEM.replace("$1",arg0)).click();
+    }
 }

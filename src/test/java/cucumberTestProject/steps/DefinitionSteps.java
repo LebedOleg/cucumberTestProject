@@ -40,11 +40,6 @@ public class DefinitionSteps {
 //
     }
 
-    @When("^the user click on \"([^\"]*)\" link$")
-    public void theUserClickOnLink(String arg0) throws Throwable {
-        anna.click_menu_link(arg0);
-    }
-
 
     @Then("Page should have the OUR SPECIAL OFFERS header")
     public void pageShouldHaveTheHeader() throws Throwable {
@@ -565,10 +560,6 @@ public class DefinitionSteps {
         anna.pageHaveTextbox(arg0);
     }
 
-    @When("^the user click on GOOGLEPLAY link$")
-    public void theUserClickOnGOOGLEPLAYLink() throws Throwable {
-        anna.theUserClickOnGOOGLEPLAYLink();
-    }
 
     @Then("^Page should have \"([^\"]*)\" title$")
     public void pageShouldHaveTitle(String arg0) throws Throwable {
@@ -598,5 +589,137 @@ public class DefinitionSteps {
     @Then("^URL should contain \"([^\"]*)\" part$")
     public void urlShouldContainPart(String arg0) throws Throwable {
         anna.urlShouldContainPart(arg0);
+    }
+
+    @When("^the user select \"([^\"]*)\" item in pages dropdown menu on Special offers page$")
+    public void theUserSelectItemInPagesDropdownMenuOnSpecialOffersPage(String arg0) throws Throwable {
+        anna.theUserSelectItemInPagesDropdownMenuOnSpecialOffersPage(arg0);
+    }
+
+
+    @When("^the user click on \"([^\"]*)\"th link in footer part$")
+    public void theUserClickOnThLinkInFooterPart(String arg0) throws Throwable {
+        anna.theUserClickOnFacebookLinkInFooterPart(arg0);
+    }
+
+    @Then("^page should contain \"([^\"]*)\" in URL$")
+    public void pageShouldContainInURL(String arg0) throws Throwable {
+        anna.pageShouldContainInURL(arg0);
+    }
+
+    @When("^the user click on \"([^\"]*)\" link \"([^\"]*)\"$")
+    public void theUserClickOnLink(String arg0, String arg1) throws Throwable {
+        anna.click_menu_link(arg0,arg1);
+    }
+
+    @When("^the user click on \"([^\"]*)\"th GOOGLEPLAY link$")
+    public void theUserClickOnThGOOGLEPLAYLink(String arg0) throws Throwable {
+        anna.theUserClickOnGOOGLEPLAYLink(arg0);
+    }
+
+    @When("^the user scroll page down$")
+    public void theUserScrollPageDown() throws Throwable {
+        anna.theUserScrollPageDown();
+    }
+
+    @Given("^the user is on Search page$")
+    public void theUserIsOnSearchPage() throws Throwable {
+        anna.theUserIsOnSearchPage();
+    }
+
+    @When("^the user click on Scope dropdown menu$")
+    public void theUserClickOnScopeDropdownMenu() throws Throwable {
+        anna.theUserClickOnScopeDropdownMenu();
+    }
+
+    @When("^the user select \"([^\"]*)\" option$")
+    public void theUserSelectOption(String arg0) throws Throwable {
+        anna.theUserSelectOption(arg0);
+    }
+
+    @When("^the user enter \"([^\"]*)\" in search textbox$")
+    public void theUserEnterInSearchTextbox(String arg0) throws Throwable {
+        anna.theUserEnterInSearchTextbox(arg0);
+    }
+
+    @When("^the user click on SEARCH button$")
+    public void theUserClickOnSEARCHButton() throws Throwable {
+       anna.theUserClickOnSEARCHButton();
+    }
+
+    @Then("^CLEAR button is appears$")
+    public void clearButtonIsAppears() throws Throwable {
+        anna.clearButtonIsAppears();
+    }
+
+    @When("^the user click on CLEAR button$")
+    public void theUserClickOnCLEARButton() throws Throwable {
+        anna.theUserClickOnCLEARButton();
+    }
+
+
+    @Then("^list with search results should contain \"([^\"]*)\"$")
+    public void listWithSearchResultsShouldContain(String arg0) throws Throwable {
+        anna.listWithSearchResultsShouldContainEntryFromSearch(arg0);
+    }
+
+    @Then("^list with results of search should dissapear$")
+    public void listWithResultsOfSearchShouldDissapear() throws Throwable {
+        anna.listWithResultsOfSearchShouldDissapear();
+    }
+
+    @When("^the user click on title of \"([^\"]*)\"th \"([^\"]*)\"$")
+    public void theUserClickOnTitleOfTh(String arg0, String arg1) throws Throwable {
+        anna.theUserClickOnTitleOfTh(arg0,arg1);
+    }
+
+    @Then("^Entry should contain \"([^\"]*)\" linked image$")
+    public void entryShouldContainLinkedImage(String arg0) throws Throwable {
+        anna.entryShouldContainLinkedImage(arg0);
+    }
+
+    @Then("^Page should contain \"([^\"]*)\" in first part of breadcrumb$")
+    public void pageShouldContainInFirstPartOfBreadcrumb(String arg0) throws Throwable {
+        anna.pageShouldContainInFirstPartOfBreadcrumb(arg0);
+    }
+
+    @Then("^Page should contain \"([^\"]*)\" in second part of breadcrumb$")
+    public void pageShouldContainInSecondPartOfBreadcrumb(String arg0) throws Throwable {
+        anna.pageShouldContainInSecondPartOfBreadcrumb(arg0);
+    }
+
+    @When("^the user click on \"([^\"]*)\"th category in category list$")
+    public void theUserClickOnThCategoryInCategoryList(String arg0) throws Throwable {
+        anna.theUserClickOnThCategoryInCategoryList(arg0);
+    }
+
+    @Then("^Page should have \"([^\"]*)\" in third part of breadcrumb$")
+    public void pageShouldHaveInThirdPartOfBreadcrumb(String arg0) throws Throwable {
+        anna.pageShouldHaveInThirdPartOfBreadcrumb(arg0);
+    }
+
+    @When("^the user open list with subcategories of \"([^\"]*)\" category$")
+    public void theUserOpenListWithSubcategoriesOfCategory(String arg0) throws Throwable {
+        anna.theUserOpenListWithSubcategoriesOfCategory(arg0);
+    }
+
+    @When("^the user click on \"([^\"]*)\" subcategory$")
+    public void theUserClickOnSubcategory(String arg0) throws Throwable {
+        anna.theUserClickOnSubcategory(arg0);
+    }
+
+    @Then("^Page should have \"([^\"]*)\" in fourth part of breadcrumb$")
+    public void pageShouldHaveInFourthPartOfBreadcrumb(String arg0) throws Throwable {
+        anna.pageShouldHaveInFourthPartOfBreadcrumb(arg0);
+    }
+
+    @Then("^Page should have name of product in last part of breadcrumb$")
+    public void pageShouldHaveNameOfProductInLastPartOfBreadcrumb() throws Throwable {
+        anna.pageShouldHaveNameOfProductInLastPartOfBreadcrumb();
+    }
+
+    @When("^the user click on \"([^\"]*)\" part of breadcrumb$")
+    public void theUserClickOnPartOfBreadcrumb(String arg0) throws Throwable {
+        anna.theUserClickOnPartOfBreadcrumb(arg0);
     }
 }

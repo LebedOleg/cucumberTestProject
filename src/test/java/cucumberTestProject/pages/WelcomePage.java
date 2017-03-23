@@ -29,9 +29,9 @@ public class WelcomePage extends PageObject {
     }
 
 
-    public void clickOnMenuLink(String arg0) {
+    public void clickOnMenuLink(String arg0, String arg1) {
         withTimeoutOf(3, TimeUnit.SECONDS);
-        $(ILocators.WELCOME_HEADER_MENULINK.replace("$1", arg0)).waitUntilClickable().click();
+        $(ILocators.WELCOME_HEADER_MENULINK.replace("$1", arg0).replace("$2", arg1)).waitUntilClickable().click();
     }
 
     public boolean imageCarouselTitleIsPresent() {
@@ -207,8 +207,8 @@ public class WelcomePage extends PageObject {
         return $(ILocators.SIGN_IN_INPUT_FIELD.replace("$1",arg0)).isPresent();
     }
 
-    public void theUserClickOnGOOGLEPLAYLink() {
-        $(ILocators.WELCOME_HEADER_GOOGLEPLAYLINK).click();
+    public void theUserClickOnGOOGLEPLAYLink(String arg0) {
+        $(ILocators.WELCOME_HEADER_GOOGLEPLAYLINK.replace("$1", arg0)).click();
     }
 
     public String pageShouldHaveTitle() {
@@ -234,6 +234,16 @@ public class WelcomePage extends PageObject {
     public String getURLCurrent() {
         String url = getDriver().getCurrentUrl();
         return url;
+    }
+
+    public void theUserClickOnFacebookLinkInFooterPart(String arg0) {
+        Actions actions = new Actions(getDriver());
+        actions.moveToElement($(ILocators.WELCOME_PAGE_SOCIAL_BLOCK_FOOTER)).build().perform();
+        $(ILocators.WELCOME_PAGE_FOOTER_SOCIAL_ICON.replace("$1", arg0)).click();
+    }
+
+    public void timeForTea() {
+        getDriver().manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
     }
 }
 

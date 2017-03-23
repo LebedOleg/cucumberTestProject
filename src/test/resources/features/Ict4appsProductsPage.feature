@@ -2,17 +2,20 @@ Feature: Products Page
 
   Background:
     Given the user is on products page
-    When the user click on "Products" link
 
-  Scenario Outline: test9
-    Then After click on  of "<item>" page with description should have - title
-    Then After click on  of "<item>" page with description should have - image
-    Then After click on  of "<item>" page with description should have - description
+
+  Scenario Outline: test18
+    When the user click on title of the "<number of product>"
+    Then Product should have title, description and image
+    When the user click on ReadMore link of the "<number of product>"
+    Then Product should have title, description and image
+    When the user click on image of the "<number of product>"
+    Then Product should have title, description and image
     Examples:
-    |item|
-    |1   |
-    |6   |
-    |12  |
+      |number of product|
+      |1                |
+      |6                |
+      |12               |
 
   Scenario Outline: 10
     When the user click on "VKontakte" icon  in "<Number of product>" product
@@ -55,15 +58,14 @@ Feature: Products Page
      |96                     |Showing 1 - 96 Of 98 Results |
 
 
-  Scenario: test13
+
+
+    Scenario: testooo
       When the user open  product that have three images, "5" product in "Appetizers" category
       When the user click on main image in product description page
       Then Close button and right arrow should be at image gallery
-
-    Scenario: test14
-      When the user open  product that have three images, "5" product in "Appetizers" category
-      When the user click on main image in product description page
       Then image gallery should be close after click on close button
+
 
 
     Scenario Outline: test8 PAGINATION NEXT
@@ -88,3 +90,18 @@ Feature: Products Page
       Then search page should have search field
       Then search page should have scope dropdown menu
       Then search page should have search button
+
+  Scenario: test17
+  Then Page should contain "ict4apps" in first part of breadcrumb
+    Then Page should contain "Products" in second part of breadcrumb
+
+  Scenario: test188
+    When the user click on "Special Offer"th category in category list
+    Then Page should have "Special Offer" in third part of breadcrumb
+
+#  Scenario: test199
+#    When the user open list with subcategories of "Desserts" category
+#    When the user click on "Cakes" subcategory
+#    Then Page should have "Cakes" in fourth part of breadcrumb
+
+

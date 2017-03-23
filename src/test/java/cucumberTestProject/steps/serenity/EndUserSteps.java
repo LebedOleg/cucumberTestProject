@@ -5,14 +5,14 @@ import cucumberTestProject.pages.*;
 import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.annotations.Step;
 import org.junit.Assert;
+import org.openqa.selenium.JavascriptExecutor;
 
 import java.util.ArrayList;
 import java.util.Map;
 
+import static net.thucydides.core.webdriver.ThucydidesWebDriverSupport.getDriver;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.containsString;
-import static org.hamcrest.Matchers.equalToIgnoringWhiteSpace;
-import static org.hamcrest.Matchers.hasItem;
+import static org.hamcrest.Matchers.*;
 
 
 public class EndUserSteps {
@@ -24,6 +24,7 @@ public class EndUserSteps {
     ContactUsPage contactUsPage;
     SignInPage signInPage;
     CreateNewAccountPage createNewAccountPage;
+    SearchPage searchPage;
 
 
     @Step
@@ -32,15 +33,15 @@ public class EndUserSteps {
         Assert.assertEquals("Incorrect title", welcomePage.getCurrentTitle(), arg0);
     }
 
-
+    @Step
     public void go_to_start_page() {
         welcomePage.open();
     }
 
 
     @Step
-    public void click_menu_link(String arg0) {
-        welcomePage.clickOnMenuLink(arg0);
+    public void click_menu_link(String arg0, String arg1) {
+        welcomePage.clickOnMenuLink(arg0,arg1);
     }
 
 
@@ -366,7 +367,7 @@ public class EndUserSteps {
 
     @Step
     public void theUserClickOnReadMoreLinkOfThe(String arg0) {
-        blogsPage.theUserClickOnTitleOfTheBlogEntry(arg0);
+        specialOffersPage.theUserClickOnReadMoreLinkOfThe(arg0);
     }
 
     @Step
@@ -384,8 +385,7 @@ public class EndUserSteps {
         entryShouldContainImage();
         entryShouldContainReadMore();
         entryShouldContainOriginalPost();
-        entryShouldContainTweetLink();
-//        entryShouldContainFacebookLink();
+
         specialOffersPage.goBack();
     }
 
@@ -404,16 +404,6 @@ public class EndUserSteps {
         Assert.assertTrue(blogsPage.entryShouldContainOriginalPost());
     }
 
-    @Step
-    public void entryShouldContainTweetLink() {
-        Assert.assertTrue(blogsPage.entryShouldContainTweetLink());
-    }
-
-    @Step
-    public void entryShouldContainFacebookLink() {
-        // Assert.assertTrue(blogsPage.entryShouldContainFacebookLink());
-        blogsPage.entryShouldContainFacebookLink();
-    }
 
     @Step
     public void theUserClickOnREADLinkOfTheBlogEntry(String arg0) {
@@ -643,8 +633,8 @@ public class EndUserSteps {
     }
 
     @Step
-    public void theUserClickOnGOOGLEPLAYLink() {
-        welcomePage.theUserClickOnGOOGLEPLAYLink();
+    public void theUserClickOnGOOGLEPLAYLink(String arg0) {
+        welcomePage.theUserClickOnGOOGLEPLAYLink(arg0);
     }
     @Step
     public void pageShouldHaveTitle(String arg0) {
@@ -672,6 +662,123 @@ public class EndUserSteps {
     @Step
     public void urlShouldContainPart(String arg0) {
         Assert.assertThat(welcomePage.getURLCurrent(), containsString(arg0));
+    }
+
+    @Step
+    public void theUserSelectItemInPagesDropdownMenuOnSpecialOffersPage(String arg0) {
+        specialOffersPage.theUserSelectItemInPagesDropdownMenuOnSpecialOffersPage(arg0);
+    }
+
+    @Step
+    public void theUserClickOnFacebookLinkInFooterPart(String arg0) {
+        welcomePage.theUserClickOnFacebookLinkInFooterPart(arg0);
+    }
+
+    @Step
+    public void pageShouldContainInURL(String arg0) {
+        productsPage.switchWindow(1);
+        welcomePage.timeForTea();
+        Assert.assertThat("", productsPage.getCurrentUrl(), containsString(arg0));
+        productsPage.switchWindow(0);
+    }
+
+    @Step
+    public void theUserScrollPageDown() {
+        JavascriptExecutor js = (JavascriptExecutor) getDriver();
+        js.executeScript("window.scrollBy(0,600)");
+    }
+
+    @Step
+    public void theUserIsOnSearchPage() {
+        searchPage.open();
+    }
+
+    @Step
+    public void theUserClickOnScopeDropdownMenu() {
+        searchPage.theUserClickOnScopeDropdownMenu();
+    }
+    @Step
+    public void theUserSelectOption(String arg0) {
+        searchPage.theUserSelectOption(arg0);
+    }
+
+    public void theUserEnterInSearchTextbox(String arg0) {
+        searchPage.theUserEnterInSearchTextbox(arg0);
+    }
+
+    public void theUserClickOnSEARCHButton() {
+        searchPage.theUserClickOnSEARCHButton();
+    }
+
+    public void clearButtonIsAppears() {
+        Assert.assertTrue(searchPage.clearButtonIsAppears());
+    }
+
+    @Step
+    public void theUserClickOnCLEARButton() {
+        searchPage.theUserClickOnCLEARButton();
+    }
+
+    @Step
+    public void listWithSearchResultsShouldContainEntryFromSearch(String arg0) {
+        searchPage.listWithSearchResultsShouldContainEntryFromSearch(arg0);
+    }
+
+    public void listWithResultsOfSearchShouldDissapear() {
+        Assert.assertFalse(searchPage.listWithResultsOfSearchShouldDissapear());
+    }
+
+    @Step
+    public void theUserClickOnTitleOfTh(String arg0, String arg1) {
+        searchPage.theUserClickOnTitleOfTh(arg0, arg1);
+    }
+
+    @Step
+    public void entryShouldContainLinkedImage(String arg0) {
+       Assert.assertTrue(blogsPage.entryShouldContainLinkedImage(arg0));
+    }
+
+    @Step
+    public void pageShouldContainInFirstPartOfBreadcrumb(String arg0) {
+        Assert.assertTrue(productsPage.pageShouldContainInFirstPartOfBreadcrumb(arg0));
+    }
+
+    @Step
+    public void pageShouldContainInSecondPartOfBreadcrumb(String arg0) {
+        Assert.assertTrue(productsPage.pageShouldContainInSecondPartOfBreadcrumb(arg0));
+    }
+
+    @Step
+    public void theUserClickOnThCategoryInCategoryList(String arg0) {
+       productsPage.theUserClickOnThCategoryInCategoryList(arg0);
+    }
+
+    @Step
+    public void pageShouldHaveInThirdPartOfBreadcrumb(String arg0) {
+      Assert.assertTrue(productsPage.pageShouldHaveInThirdPartOfBreadcrumb(arg0));
+    }
+
+    @Step
+    public void theUserOpenListWithSubcategoriesOfCategory(String arg0) {
+        productsPage.theUserOpenListWithSubcategoriesOfCategory(arg0);
+    }
+    @Step
+    public void theUserClickOnSubcategory(String arg0) {
+        productsPage.theUserClickOnSubcategory(arg0);
+    }
+    @Step
+    public void pageShouldHaveInFourthPartOfBreadcrumb(String arg0) {
+        Assert.assertTrue(productsPage.pageShouldHaveInFourthPartOfBreadcrumb(arg0));
+    }
+
+    @Step
+    public void pageShouldHaveNameOfProductInLastPartOfBreadcrumb() {
+        Assert.assertThat(productsPage.getNameOfProduct(), equalToIgnoringCase(productsPage.getTextInBreadCrumb()));
+    }
+
+    @Step
+    public void theUserClickOnPartOfBreadcrumb(String arg0) {
+        productsPage.theUserClickOnPartOfBreadcrumb(arg0);
     }
 }
 
