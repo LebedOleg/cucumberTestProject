@@ -780,6 +780,10 @@ public class EndUserSteps {
     public void theUserClickOnPartOfBreadcrumb(String arg0) {
         productsPage.theUserClickOnPartOfBreadcrumb(arg0);
     }
+    @Step
+    public void thirdPartOfBreadcrumbIsPresent() {
+        Assert.assertTrue(blogsPage.thirdPartOfBreadcrumbIsPresent());
+    }
 }
 
 

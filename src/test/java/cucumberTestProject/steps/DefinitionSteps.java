@@ -722,4 +722,9 @@ public class DefinitionSteps {
     public void theUserClickOnPartOfBreadcrumb(String arg0) throws Throwable {
         anna.theUserClickOnPartOfBreadcrumb(arg0);
     }
+
+    @Then("^Third part of breadcrumb is present$")
+    public void thirdPartOfBreadcrumbIsPresent() throws Throwable {
+        anna.thirdPartOfBreadcrumbIsPresent();
+    }
 }

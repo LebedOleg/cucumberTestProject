@@ -119,4 +119,8 @@ public class BlogsPage extends PageObject {
         withTimeoutOf(16, TimeUnit.SECONDS).waitFor(ExpectedConditions.presenceOfElementLocated(By.xpath(ILocators.BLOG_DESCRIPTION_PAGE_SOCIAL_ICON.replace("$1",arg0))));
         return $(ILocators.BLOG_DESCRIPTION_PAGE_SOCIAL_ICON.replace("$1",arg0)).isVisible();
     }
+
+    public boolean thirdPartOfBreadcrumbIsPresent() {
+        return $(ILocators.BREADCRUMB_LAST).isPresent();
+    }
 }

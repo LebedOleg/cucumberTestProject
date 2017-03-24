@@ -63,4 +63,10 @@ Feature: Blogs page
     Then Page should contain "ict4apps" in first part of breadcrumb
     Then Page should contain "Blogs" in second part of breadcrumb
     When the user click on title of the "1" blog entry
-    Then
+    Then Third part of breadcrumb is present
+    When the user click on "Blogs" part of breadcrumb
+    Then Page should have the "Blogs - ict4apps" title
+    Then Page should have "http://88.198.7.89:8100/web/guest/blogs" URL
+    When the user click on "ict4apps" part of breadcrumb
+    Then Page should have the "Welcome - ict4apps" title
+    Then Page should have "http://88.198.7.89:8100/web/guest/welcome" URL
