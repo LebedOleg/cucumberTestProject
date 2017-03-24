@@ -25,6 +25,7 @@ import static org.yecht.LevelStatus.header;
 public class BlogsPage extends PageObject {
 
     String header;
+    String numberOfPages;
 
     public boolean theUserShouldBeRelocatedToPageThatContainsImage() {
         return $(ILocators.BLOG_DESCRIPTION_PAGE_IMAGE).isPresent();
@@ -122,5 +123,19 @@ public class BlogsPage extends PageObject {
 
     public boolean thirdPartOfBreadcrumbIsPresent() {
         return $(ILocators.BREADCRUMB_LAST).isPresent();
+    }
+
+
+    public void getCurrentNumberOfPages() {
+        String s = $(ILocators.BLOGS_PAGE_PAGES_DROPDOWN_MENU).getText();
+        numberOfPages = s.substring(s.lastIndexOf("f")+2);
+    }
+
+    public boolean pagesDropdownMenuShouldChangeToNext(String arg0) {
+        return $(ILocators.BLOGS_PAGE_PAGES_DROPDOWN_MENU_VALUE.replace("$1", arg0).replace("$2",numberOfPages)).isPresent();
+    }
+
+    public boolean pagesDropdownMenuShouldDisplayThatLastPageIsOpened() {
+        return $(ILocators.BLOGS_PAGE_PAGES_DROPDOWN_MENU_VALUE.replace("$1",numberOfPages).replace("$2",numberOfPages)).isPresent();
     }
 }

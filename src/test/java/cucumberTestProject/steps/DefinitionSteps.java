@@ -727,4 +727,15 @@ public class DefinitionSteps {
     public void thirdPartOfBreadcrumbIsPresent() throws Throwable {
         anna.thirdPartOfBreadcrumbIsPresent();
     }
+
+
+    @Then("^Pages dropdown menu should display that \"([^\"]*)\" page is opened$")
+    public void pagesDropdownMenuShouldDisplayThatPageIsOpened(String arg0) throws Throwable {
+        anna.pagesDropdownMenuShouldChangeToNext(arg0);
+    }
+
+    @Then("^Pages dropdown menu should display that last page is opened$")
+    public void pagesDropdownMenuShouldDisplayThatLastPageIsOpened() throws Throwable {
+        anna.pagesDropdownMenuShouldDisplayThatLastPageIsOpened();
+    }
 }

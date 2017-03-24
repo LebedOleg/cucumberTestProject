@@ -152,6 +152,9 @@ public interface ILocators {
     String BLOG_DESCRIPTION_PAGE_NEXT_BUTTON = "//a[contains(text(),'Next')]";
     String BLOG_DESCRIPTION_PAGE_SOCIAL_ICON = "//li[contains(@class,'$1')]";
 
+    String BLOGS_PAGE_PAGES_DROPDOWN_MENU = "//span[@class='lfr-icon-menu-text']";
+    String BLOGS_PAGE_PAGES_DROPDOWN_MENU_VALUE = "//span[text()='Page $1 of $2']";
+
 
     String HEADER_ON_SOURCE_PAGE = "//*[contains(text(),'$1')]"; //TODO: fsfafasfasfasfasfasfasfasfasfas
     String BLOG_DESCRIPTION_PAGE_TEXT = "//div[@class='entry-body']/div/node()[not(self::img|self::a|self::div)]";

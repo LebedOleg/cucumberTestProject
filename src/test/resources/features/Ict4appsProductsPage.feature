@@ -99,9 +99,23 @@ Feature: Products Page
     When the user click on "Special Offer"th category in category list
     Then Page should have "Special Offer" in third part of breadcrumb
 
-#  Scenario: test199
-#    When the user open list with subcategories of "Desserts" category
-#    When the user click on "Cakes" subcategory
-#    Then Page should have "Cakes" in fourth part of breadcrumb
+  Scenario: test199
+    When the user open list with subcategories of "Desserts" category
+    When the user click on "Cakes" subcategory
+    Then Page should have "Cakes" in fourth part of breadcrumb
+    When the user click on ReadMore link of the "1"
+    Then Page should have name of product in last part of breadcrumb
+    When the user click on "Cakes" part of breadcrumb
+    Then Page should have "http://88.198.7.89:8100/web/guest/products/-/category/cakes" URL
+
+  Scenario: test120
+    When the user click on "Products" part of breadcrumb
+    Then Page should have the "Products - ict4apps" title
+    Then Page should have "http://88.198.7.89:8100/web/guest/products" URL
+
+  Scenario: test121
+    When the user click on "ict4apps" part of breadcrumb
+    Then Page should have the "Welcome - ict4apps" title
+    Then Page should have "http://88.198.7.89:8100/web/guest" URL
 
 

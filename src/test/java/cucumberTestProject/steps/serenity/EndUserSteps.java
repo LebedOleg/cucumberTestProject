@@ -784,6 +784,16 @@ public class EndUserSteps {
     public void thirdPartOfBreadcrumbIsPresent() {
         Assert.assertTrue(blogsPage.thirdPartOfBreadcrumbIsPresent());
     }
+
+    public void pagesDropdownMenuShouldChangeToNext(String arg0) {
+        blogsPage.getCurrentNumberOfPages();
+        Assert.assertTrue(blogsPage.pagesDropdownMenuShouldChangeToNext(arg0));
+    }
+
+    public void pagesDropdownMenuShouldDisplayThatLastPageIsOpened() {
+        blogsPage.getCurrentNumberOfPages();
+        Assert.assertTrue(blogsPage.pagesDropdownMenuShouldDisplayThatLastPageIsOpened());
+    }
 }
 
 

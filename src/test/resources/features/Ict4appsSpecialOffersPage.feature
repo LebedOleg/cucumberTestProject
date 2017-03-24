@@ -148,9 +148,11 @@ Feature: Special offers page
     When the user click on title of the "1"
     Then Page should have name of product in last part of breadcrumb
     When the user click on "Special Offers" part of breadcrumb
-#    Then
+    Then Page should have the "Special Offers - ict4apps" title
+    Then Page should have "http://88.198.7.89:8100/web/guest/special-offers" URL
+
+  Scenario: test109
     When the user click on "ict4apps" part of breadcrumb
-#    Then
-
-
+    Then Page should have the "Welcome - ict4apps" title
+    Then Page should have "http://88.198.7.89:8100/web/guest" URL
 

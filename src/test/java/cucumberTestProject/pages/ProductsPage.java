@@ -169,9 +169,10 @@ public class ProductsPage extends PageObject {
     }
 
     public void theUserOpenListWithSubcategoriesOfCategory(String arg0) {
-        Actions actions = new Actions(getDriver());
-        actions.moveToElement($(ILocators.CATEGORY_LIST_CATEGORY_FOLDER)).build().perform();
-        $(ILocators.CATEGORY_LIST_SUBCATEGORY_LIST).findElement(By.xpath(ILocators.CATEGORY_LIST_SUBCATEGORY_ITEM2)).click();
+//        Actions actions = new Actions(getDriver());
+//        actions.moveToElement($(ILocators.CATEGORY_LIST_CATEGORY_FOLDER)).build().perform();
+//        $(ILocators.CATEGORY_LIST_SUBCATEGORY_LIST).findElement(By.xpath(ILocators.CATEGORY_LIST_SUBCATEGORY_ITEM2)).click();
+        $(ILocators.CATEGORY_LIST_ITEM.replace("$1",arg0)).findElement(By.xpath(".//../../a")).click();
     }
 
     public void theUserClickOnSubcategory(String arg0) {

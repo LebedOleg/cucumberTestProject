@@ -59,7 +59,7 @@ Feature: Blogs page
     Then search page should have scope dropdown menu
     Then search page should have search button
 
-  Scenario: test107
+  Scenario: test111
     Then Page should contain "ict4apps" in first part of breadcrumb
     Then Page should contain "Blogs" in second part of breadcrumb
     When the user click on title of the "1" blog entry
@@ -67,6 +67,21 @@ Feature: Blogs page
     When the user click on "Blogs" part of breadcrumb
     Then Page should have the "Blogs - ict4apps" title
     Then Page should have "http://88.198.7.89:8100/web/guest/blogs" URL
+
+
+  Scenario: test112
     When the user click on "ict4apps" part of breadcrumb
     Then Page should have the "Welcome - ict4apps" title
-    Then Page should have "http://88.198.7.89:8100/web/guest/welcome" URL
+    Then Page should have "http://88.198.7.89:8100/web/guest" URL
+
+
+  Scenario: test113
+    When the user click on "Next" pagination button
+    Then Pages dropdown menu should display that "2" page is opened
+    When the user click on " Previous " pagination button
+    Then Pages dropdown menu should display that "1" page is opened
+    When the user click on " Last → " pagination button
+    Then Pages dropdown menu should display that last page is opened
+    When the user click on " ← First " pagination button
+    Then Pages dropdown menu should display that "1" page is opened
+
