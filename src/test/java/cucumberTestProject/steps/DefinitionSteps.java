@@ -738,4 +738,9 @@ public class DefinitionSteps {
     public void pagesDropdownMenuShouldDisplayThatLastPageIsOpened() throws Throwable {
         anna.pagesDropdownMenuShouldDisplayThatLastPageIsOpened();
     }
+
+    @Then("^URL should change to \"([^\"]*)\"$")
+    public void urlShouldChangeTo(String arg0) throws Throwable {
+        anna.urlShouldChangeTo(arg0);
+    }
 }

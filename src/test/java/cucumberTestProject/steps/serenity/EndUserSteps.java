@@ -794,6 +794,10 @@ public class EndUserSteps {
         blogsPage.getCurrentNumberOfPages();
         Assert.assertTrue(blogsPage.pagesDropdownMenuShouldDisplayThatLastPageIsOpened());
     }
+
+    public void urlShouldChangeTo(String arg0) {
+        Assert.assertThat(signInPage.getCurrentURL(), containsString(arg0));
+    }
 }
 
 

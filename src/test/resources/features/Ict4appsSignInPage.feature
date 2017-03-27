@@ -6,13 +6,13 @@ Feature: Sign In page
 
   Scenario Outline: test1
     When the user click on "<icon>"
-    Then URL should change to ""
+    Then URL should change to "<URL>"
     Examples:
-    |icon    |
-    |LinkedIn|
-    |Twitter |
-    |Google+ |
-    |Facebook|
+    |icon    |URL                      |
+    |LinkedIn|https://www.linkedin.com |
+    |Twitter |https://twitter.com      |
+    |Google+ |https://plus.google.com  |
+    |Facebook|https://www.facebook.com |
 
   Scenario: test2
     When the user click on SIGN IN link on SIGN IN page
@@ -34,3 +34,4 @@ Feature: Sign In page
   Scenario: test5
     When the user click on Create Account link
     Then Create Account page should be open
+

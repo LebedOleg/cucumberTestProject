@@ -53,6 +53,11 @@ public class SignInPage extends PageObject {
         return $(ILocators.CREATE_ACCOUNT_HEADER).isPresent();
     }
 
+    public String getCurrentURL() {
+        return getDriver().getCurrentUrl();
+    }
+
+
     //   return $(ILocators.SIGN_IN_INPUT_FIELD.replace("$1",arg0)).isEmpty();
 
 }
