@@ -279,6 +279,7 @@ public class EndUserSteps {
     public void pageShouldContainPartInURL(String arg0) {
         productsPage.switchWindow(1);
         //   Assert.assertTrue( productsPage.getCurrentUrl().contains(arg0));
+        welcomePage.timeForTea(arg0);
         Assert.assertThat("", productsPage.getCurrentUrl(), containsString(arg0));
         productsPage.switchWindow(0);
     }

@@ -4,7 +4,7 @@ Feature: Blogs page
   Background:
     Given the user is on Blogs page
 
-  Scenario Outline: test19
+  Scenario Outline: test301
     When the user click on title of the "<number of blog>" blog entry
     Then Entry should contain all required elements
   #  Click on all elements in BLOG ENTRY DESCRIPTION
@@ -20,7 +20,7 @@ Feature: Blogs page
       | 10             |
       | 19             |
 
-  Scenario Outline: test26
+  Scenario Outline: test302
     When the user click on title of the "<number of blog>" blog entry
     Then Entry should contain "twitter" linked image
     Then Entry should contain "facebook" linked image
@@ -32,7 +32,7 @@ Feature: Blogs page
       | 19             |
 
 
-  Scenario Outline: test20
+  Scenario Outline: test303
     When the user click on title of the "<number of blog>" blog entry
     When the user click on View Original Post link
     Then Website contains title of post that was chosen
@@ -48,18 +48,18 @@ Feature: Blogs page
       | 11             |
       | 19             |
 
-  Scenario: test21
+  Scenario: test304
     When the user enter value in search field
     When the user press Enter button
     Then Search page should be opened
 
-  Scenario: test27
+  Scenario: test305
     When the user click on search button
     Then search page should have search field
     Then search page should have scope dropdown menu
     Then search page should have search button
 
-  Scenario: test111
+  Scenario: test306
     Then Page should contain "ict4apps" in first part of breadcrumb
     Then Page should contain "Blogs" in second part of breadcrumb
     When the user click on title of the "1" blog entry
@@ -69,13 +69,13 @@ Feature: Blogs page
     Then Page should have "http://88.198.7.89:8100/web/guest/blogs" URL
 
 
-  Scenario: test112
+  Scenario: test307
     When the user click on "ict4apps" part of breadcrumb
     Then Page should have the "Welcome - ict4apps" title
     Then Page should have "http://88.198.7.89:8100/web/guest" URL
 
 
-  Scenario: test113
+  Scenario: test308
     When the user click on "Next" pagination button
     Then Pages dropdown menu should display that "2" page is opened
     When the user click on " Previous " pagination button

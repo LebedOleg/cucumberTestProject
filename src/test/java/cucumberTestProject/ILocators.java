@@ -128,7 +128,7 @@ public interface ILocators {
 
     //TODO://///////////////////////////////////////////SPECIAL OFFERS PAGE///////////////////////////////////////////////////////////////////
     String SPECIAL_OFFERS_PAGE_PAGES_DROPDOWNMENU_ITEM = "//a[@id='_PRODUCT_PORTLET_WAR_ict4appsportlet_kldx_column1_1_menu_$1']/span";
-    String SPECIAL_OFFERS_PAGE_ITEMS_PER_PAGE_DROPDOWN_ITEM = "//a[@id='_PRODUCT_PORTLET_WAR_ict4appsportlet_tiym_column1_1_menu_$1']/span";
+    String SPECIAL_OFFERS_PAGE_ITEMS_PER_PAGE_DROPDOWN_ITEM = "(//span[@class=\"taglib-text-icon\" and contains(text(),'$1')])[1]";
 
     //TODO:////////////////////////////////////////////BLOGS PAGE///////////////////////////////////////////////////////
 
