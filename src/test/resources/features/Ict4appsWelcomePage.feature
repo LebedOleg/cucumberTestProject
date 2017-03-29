@@ -4,10 +4,10 @@ Feature: Lookup a definition
   Background:
     Given the user is on Ictapps start page
 
-  Scenario: test1
-    When the user click on site logotype
-    Then Page should have the "Welcome - ict4apps" title
-    Then Page should have "http://88.198.7.89:8100/welcome" URL
+#  Scenario: test1
+#    When the user click on site logotype
+#    Then Page should have the "Welcome - ict4apps" title
+#    Then Page should have "http://88.198.7.89:8100/welcome" URL
 
   Scenario: test2
     When the user click on "Welcome" link "1"
@@ -61,25 +61,25 @@ Feature: Lookup a definition
       | 5    |
 
 
-  Scenario Outline: test9
-    When the user move mouse cursor on "<item>" in OUR SPECIAL OFFERS picture carousel
-    When the user click on title of "<item>"
-    Then Product should have title, description and image
-    Examples:
-      | item |
-      | 0    |
-      | 2    |
-      | 4    |
+#  Scenario Outline: test9
+#    When the user move mouse cursor on "<item>" in OUR SPECIAL OFFERS picture carousel
+#    When the user click on title of "<item>"
+#    Then Product should have title, description and image
+#    Examples:
+#      | item |
+#      | 0    |
+#      | 2    |
+#      | 4    |
 
-  Scenario Outline: test10
-    When the user move mouse cursor on "<item>" in OUR SPECIAL OFFERS picture carousel
-    When the user click on MORE link of "<item>"
-    Then Product should have title, description and image
-    Examples:
-      | item |
-      | 0    |
-      | 2    |
-      | 4    |
+#  Scenario Outline: test10
+#    When the user move mouse cursor on "<item>" in OUR SPECIAL OFFERS picture carousel
+#    When the user click on MORE link of "<item>"
+#    Then Product should have title, description and image
+#    Examples:
+#      | item |
+#      | 0    |
+#      | 2    |
+#      | 4    |
 
   Scenario Outline: test11 Special offers carousel
     When the user move mouse cursor on "<item>" in OUR SPECIAL OFFERS picture carousel
@@ -109,16 +109,16 @@ Feature: Lookup a definition
       | 4 | русский    |
 
 
-  Scenario Outline: : test14 Category carousel
-    Then Move mouse cursor on "<item>"
-    Then Check that item have "<item>"
-    When the user click on "<item>" of category image carousel
-    Then URL should contain "http://88.198.7.89:8100/web/guest/products/-/category/" part
-    Examples:
-      | item |
-      | 0    |
-      | 5    |
-      | 8    |
+#  Scenario Outline: : test14 Category carousel
+#    Then Move mouse cursor on "<item>"
+#    Then Check that item have "<item>"
+#    When the user click on "<item>" of category image carousel
+#    Then URL should contain "http://88.198.7.89:8100/web/guest/products/-/category/" part
+#    Examples:
+#      | item |
+#      | 0    |
+#      | 5    |
+#      | 8    |
 
 
   Scenario: test15

@@ -11,7 +11,7 @@ public interface ILocators {
 
     //TODO: ///////////////////////////////////////////WELCOME PAGE ////////////////////////////////////////////////////
 
-    String WELCOME_HEADER_MENULINK = "(//span[contains(text(),'$1')])[$2]";
+    String WELCOME_HEADER_MENULINK = "(//span[contains(text(),'$1')])";
     String WELCOME_PAGE_LOGOTYPE = "//*[@class='logo custom-logo']";
     String WELCOME_HEADER_GOOGLEPLAYLINK = "(//img[@alt='Android app on Google Play'])[$1]";
     String WELCOME_HEADER_APPSTORELINK = "//img[@alt='Available on the App Store']";
@@ -42,6 +42,7 @@ public interface ILocators {
     String To2 = "//div[@data-slick-index='4']//img";
     String CONTACT_US_TEXTBOX = ".//textarea";
     String LANGUAGES_LIST = "//*[@id='_82_languageId']/option";
+    String LANGUAGE_LIST_OPTION = "//select/option[contains(text(),' $1 ')]";
 
     //////////////////////////////////////////CATEGORY IMAGE CAROUSEL //////////////////////////////////////////
     String CATEGORY_IMAGE_CAROUSEL = "//div[@id='column-2']//li[@class!='slick-slide slick-cloned']/div[@class='item_content num_$1']/a";

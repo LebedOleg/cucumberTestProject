@@ -242,8 +242,12 @@ public class WelcomePage extends PageObject {
         $(ILocators.WELCOME_PAGE_FOOTER_SOCIAL_ICON.replace("$1", arg0)).click();
     }
 
-    public void timeForTea() {
-        getDriver().manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+    public void timeForTea(String arg0) {
+        withTimeoutOf(16, TimeUnit.SECONDS).waitFor(ExpectedConditions.urlContains(arg0));
+    }
+
+    public boolean listOfLanguagesShouldBeCorrect(String arg0) {
+       return  $(ILocators.LANGUAGE_DROPDOWN_OPTION.replace("$1", arg0)).isVisible();
     }
 }
 

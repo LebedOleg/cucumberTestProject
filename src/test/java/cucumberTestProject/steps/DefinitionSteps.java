@@ -743,4 +743,9 @@ public class DefinitionSteps {
     public void urlShouldChangeTo(String arg0) throws Throwable {
         anna.urlShouldChangeTo(arg0);
     }
+
+    @Then("^list of languages should be correct \"([^\"]*)\"$")
+    public void listOfLanguagesShouldBeCorrect(String arg0) throws Throwable {
+        anna.listOfLanguagesShouldBeCorrect(arg0);
+    }
 }

@@ -677,7 +677,7 @@ public class EndUserSteps {
     @Step
     public void pageShouldContainInURL(String arg0) {
         productsPage.switchWindow(1);
-        welcomePage.timeForTea();
+        welcomePage.timeForTea(arg0);
         Assert.assertThat("", productsPage.getCurrentUrl(), containsString(arg0));
         productsPage.switchWindow(0);
     }
@@ -784,19 +784,26 @@ public class EndUserSteps {
     public void thirdPartOfBreadcrumbIsPresent() {
         Assert.assertTrue(blogsPage.thirdPartOfBreadcrumbIsPresent());
     }
-
+    @Step
     public void pagesDropdownMenuShouldChangeToNext(String arg0) {
         blogsPage.getCurrentNumberOfPages();
         Assert.assertTrue(blogsPage.pagesDropdownMenuShouldChangeToNext(arg0));
     }
 
+    @Step
     public void pagesDropdownMenuShouldDisplayThatLastPageIsOpened() {
         blogsPage.getCurrentNumberOfPages();
         Assert.assertTrue(blogsPage.pagesDropdownMenuShouldDisplayThatLastPageIsOpened());
     }
 
+    @Step
     public void urlShouldChangeTo(String arg0) {
         Assert.assertThat(signInPage.getCurrentURL(), containsString(arg0));
+    }
+
+    @Step
+    public void listOfLanguagesShouldBeCorrect(String arg0) {
+        Assert.assertTrue(welcomePage.listOfLanguagesShouldBeCorrect(arg0));
     }
 }
 
