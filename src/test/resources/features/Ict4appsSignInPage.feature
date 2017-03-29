@@ -10,9 +10,14 @@ Feature: Sign In page
     Examples:
     |icon    |URL                      |
     |LinkedIn|https://www.linkedin.com |
-    |Twitter |https://twitter.com      |
+    |Twitter |https://api.twitter.com  |
     |Google+ |https://plus.google.com  |
-    |Facebook|https://www.facebook.com |
+
+  Scenario: test 502
+  When the user click on "Facebook"
+    Then page should contain "https://www.facebook.com" part in URL
+
+
 
   Scenario: test2
     When the user click on SIGN IN link on SIGN IN page

@@ -243,7 +243,7 @@ public class WelcomePage extends PageObject {
     }
 
     public void timeForTea(String arg0) {
-        withTimeoutOf(16, TimeUnit.SECONDS).waitFor(ExpectedConditions.urlContains(arg0));
+        withTimeoutOf(5, TimeUnit.SECONDS).waitFor(ExpectedConditions.urlContains(arg0));
     }
 
     public boolean listOfLanguagesShouldBeCorrect(String arg0) {

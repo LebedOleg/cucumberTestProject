@@ -22,5 +22,5 @@ Scenario: test2
   When the user click on "7" calendar day
   Then date in textbox should change to "01/07/1970"
 
-Scenario: test3 Email Address (Required) textbox validation
-  When the user enter
+#Scenario: test3 Email Address (Required) textbox validation
+#  When the user enter

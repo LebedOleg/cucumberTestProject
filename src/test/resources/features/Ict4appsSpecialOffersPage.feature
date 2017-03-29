@@ -55,17 +55,13 @@ Feature: Special offers page
      |36                     |Showing 1 - 36 Of 15 Results |
      |96                     |Showing 1 - 96 Of 15 Results |
 
-  Scenario: 206
-    When the user open  product that have three images, "5" product in "Appetizers" category
-    When the user click on main image in product description page
-    Then Close button and right arrow should be at image gallery
-    Then image gallery should be close after click on close button
 
 
-  Scenario: test207
-    When the user click on site logotype
-    Then Page should have the "Welcome - ict4apps" title
-    Then Page should have "http://88.198.7.89:8100/welcome" URL
+
+#  Scenario: test207
+#    When the user click on site logotype
+#    Then Page should have the "Welcome - ict4apps" title
+#    Then Page should have "http://88.198.7.89:8100/welcome" URL
 
   Scenario: test208
     When the user click on "Welcome" link "1"
@@ -118,12 +114,12 @@ Feature: Special offers page
     Then Page should have the "Products - ict4apps" title
     Then Page should have "http://88.198.7.89:8100/web/guest/products" URL
 
-  Scenario: test216
-    When the user scroll page down
-    When the user click on "Special Offers" link "3"
-    Then Page should have the "Special Offers" breadcrumb
-    Then Page should have the "Special Offers - ict4apps" title
-    Then Page should have "http://88.198.7.89:8100/web/guest/special-offers" URL
+#  Scenario: test216
+#    When the user scroll page down
+#    When the user click on "Special Offers" link "3"
+#    Then Page should have the "Special Offers" breadcrumb
+#    Then Page should have the "Special Offers - ict4apps" title
+#    Then Page should have "http://88.198.7.89:8100/web/guest/special-offers" URL
 
   Scenario: test217
     When the user scroll page down

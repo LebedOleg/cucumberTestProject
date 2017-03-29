@@ -799,6 +799,7 @@ public class EndUserSteps {
 
     @Step
     public void urlShouldChangeTo(String arg0) {
+        welcomePage.timeForTea(arg0);
         Assert.assertThat(signInPage.getCurrentURL(), containsString(arg0));
     }
 

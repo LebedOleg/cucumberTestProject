@@ -21,10 +21,3 @@ Feature: Contact Us page
      When Enter "qwerty" in " Comments " entry area
      When  the user click on SEND button
      Then error message above " Comments " entry area should disappear
-#Text Verification (Required)
-
-#    Scenario Outline: test23
-#      When Enter "<value>" in " Name * " textbox
-#      When the user click on SEND button
-#      Then
-#      Examples:
