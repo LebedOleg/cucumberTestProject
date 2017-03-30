@@ -18,6 +18,7 @@ public interface ILocators {
     String CONTACT_US_HEADER = "//h1[@class='portlet-title']/span[contains(text(),'Contacts')]";
     String WELCOME_PAGE_SOCIAL_BLOCK_FOOTER = ".//*[@id='atstbx']/div";
     String WELCOME_PAGE_FOOTER_SOCIAL_ICON = "(.//*[@id='atstbx']/div//span[@class='at-icon-wrapper'])[$1]";
+    String WELCOME_PAGE_SLOGAN = "//*[contains(text(),'We offer the best meals at the best value to your door in no time')]";
 
 
     //TODO: LANGUAGE DROPDOWN MENU
@@ -179,18 +180,24 @@ public interface ILocators {
     String SIGN_IN_ERROR_MESSAGE_TRY_AGAIN = "//*[text()=' Authentication failed. Please try again. ']";
     String SIGN_IN_CREATE_ACCOUNT_LINK = "//*[text()='Create Account']";
     String SIGN_IN_HEADER = "//span[@class='portlet-title-text']";
+    String SIGN_IN_MY_ACCOUNT_BUTTON = "//span[text()=' My Account ']";
+    String SIGN_IN_SIGN_OUT_BUTTON = "//span[text()=' Sign Out ']";
+    String SIGN_IN_RETURN_TO_FULL_PAGE_BUTTON = "//a[text()='Return to Full Page']";
 
     //TODO://////////////////////////////////////////CREATE ACCOUNT PAGE////////////////////////////////////////////////
     String CREATE_ACCOUNT_HEADER = "//*[text()='Create Account']";
     String CREATE_ACCOUNT_SAVE_BUTTON = "//*[text()=' Save ']";
-    String CREATE_ACCOUNT_INPUT_FIELD = "//label[contains(text(),'First Name ')]/../input";
+    String CREATE_ACCOUNT_INPUT_FIELD = "//label[contains(text(),'$1')]/../input";
     String CREATE_ACCOUNT_ERROR_MESSAGE = "//label[contains(text(),'$1')]/..//div[@class='required']";
     String CREATE_ACCOUNT_ERROR_MESSAGE_EMAIL = "//label[contains(text(),' Email Address ')]/..//div[@class='email']";
+    String CREATE_ACCOUNT_GENDER_DROPDOWN = "//*[@id='_58_male']";
+    String CREATE_ACCOUNT_GENDER_DROPDOWN_OPTION = "//*[@id='_58_male']/*[contains(text(),'$1')]";
+    String CREATE_ACCOUNT_COUNTRY_DROPDOWN_OPTION = ".//*[@id='_58_country']/*[contains(text(),'$1')]";
 
     //TODO:DATE-PICKER
     String CREATE_ACCOUNT_DATE_PICKER = ".//*[@id='_58_birthday']";
     String CREATE_ACCOUNT_DATE_PICKER_RIGHT_ARROW = "//*[@aria-label='Go to $1 month']";
     String CREATE_ACCOUNT_DATE_PICKER_CURRENT_DATE = ".//*[@class='yui3-u yui3-calendar-header-label']";
-    String CREATE_ACCOUNT_DATE_PICKER_CALENDAR_DATE = "//*[@ aria-selected='true' AND text()='$1']";
+    String CREATE_ACCOUNT_DATE_PICKER_CALENDAR_DATE = "//td[not(contains(@class,'hidden')) and text()='$1' and not(contains(@class,'nextmonth'))]";
     String CREATE_ACCOUNT_DATE_PICKER_VALUE = "//*[@value='01/01/1970']";
 }

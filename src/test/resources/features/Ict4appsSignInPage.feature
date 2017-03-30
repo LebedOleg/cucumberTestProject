@@ -36,6 +36,26 @@ Feature: Sign In page
     Then Request failed to complete error message should appear
     Then Please try again error message should appear
 
+  Scenario: test 605 Correct login and incorrect password
+    When Enter "test@test.com" in "login" textbox on SIGN IN page
+    When Enter "asdfgh" in "password" textbox on SIGN IN page
+    When the user click on SIGN IN link on SIGN IN page
+    Then Request failed to complete error message should appear
+    Then Please try again error message should appear
+
+  Scenario: test 606 correct login and password
+    When Enter "test@test.com" in "login" textbox on SIGN IN page
+    When Enter "qwerty" in "password" textbox on SIGN IN page
+    When the user click on SIGN IN link on SIGN IN page
+    Then Page should contain My Account button
+    Then Page should contain Log Out button
+
+  Scenario: test 607 click on Return to the Full page button
+    When the user click on Return to Full Page button
+    Then Page should have the "Welcome - ict4apps" title
+    Then Page should have "http://88.198.7.89:8100/web/guest/welcome" URL
+
+
   Scenario: test5
     When the user click on Create Account link
     Then Create Account page should be open

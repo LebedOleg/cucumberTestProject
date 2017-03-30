@@ -249,5 +249,23 @@ public class WelcomePage extends PageObject {
     public boolean listOfLanguagesShouldBeCorrect(String arg0) {
        return  $(ILocators.LANGUAGE_DROPDOWN_OPTION.replace("$1", arg0)).isVisible();
     }
+
+    public boolean sloganShouldBeTranslatedIntoChosenLanguage() {
+        try {
+             $(ILocators.WELCOME_PAGE_SLOGAN).isPresent();
+            return true;
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+            return false;
+        }
+    }
+
+    public boolean searchButtonShouldBeTranslated() {
+        try {
+            $(ILocators.PRODUCTS_PAGE_SEARCH_BUTTON).isPresent();
+            return true;
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+            return false;
+        }
+    }
 }
 

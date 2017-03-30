@@ -57,6 +57,18 @@ public class SignInPage extends PageObject {
         return getDriver().getCurrentUrl();
     }
 
+    public boolean pageShouldContainMyAccountButton() {
+        return $(ILocators.SIGN_IN_MY_ACCOUNT_BUTTON).isPresent();
+    }
+
+    public boolean pageShouldContainLogOutButton() {
+        return $(ILocators.SIGN_IN_SIGN_OUT_BUTTON).isPresent();
+    }
+
+    public void theUserClickOnReturnToFullPageButton() {
+        $(ILocators.SIGN_IN_RETURN_TO_FULL_PAGE_BUTTON).click();
+    }
+
 
     //   return $(ILocators.SIGN_IN_INPUT_FIELD.replace("$1",arg0)).isEmpty();
 

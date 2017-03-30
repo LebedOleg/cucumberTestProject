@@ -748,4 +748,79 @@ public class DefinitionSteps {
     public void listOfLanguagesShouldBeCorrect(String arg0) throws Throwable {
         anna.listOfLanguagesShouldBeCorrect(arg0);
     }
+
+    @Then("^Page should contain My Account button$")
+    public void pageShouldContainMyAccountButton() throws Throwable {
+        anna.pageShouldContainMyAccountButton();
+    }
+
+    @Then("^Page should contain Log Out button$")
+    public void pageShouldContainLogOutButton() throws Throwable {
+        anna.pageShouldContainLogOutButton();
+    }
+
+    @When("^the user click on Return to Full Page button$")
+    public void theUserClickOnReturnToFullPageButton() throws Throwable {
+        anna.theUserClickOnReturnToFullPageButton();
+    }
+
+    @When("^the user enter \"([^\"]*)\" in date picker textbox$")
+    public void theUserEnterInDatePickerTextbox(String arg0) throws Throwable {
+        anna.theUserEnterInDatePickerTextbox(arg0);
+    }
+
+    @When("^the user clear value in date picker textbox$")
+    public void theUserClearValueInDatePickerTextbox() throws Throwable {
+        anna.theUserClearValueInDatePickerTextbox();
+    }
+
+    @When("^Enter \"([^\"]*)\" value in \"([^\"]*)\" textbox$")
+    public void enterValueInTextbox(String arg0, String arg1) throws Throwable {
+        anna.enterValueInTextbox(arg0,arg1);
+    }
+
+    @Then("^Error message should disappear near of \"([^\"]*)\" textbox$")
+    public void errorMessageShouldDisappearNearOfTextbox(String arg0) throws Throwable {
+        anna.errorMessageShouldDisappearNearOfTextbox(arg0);
+    }
+
+    @When("^the user click on Gender dropdown menu$")
+    public void theUserClickOnGenderDropdownMenu() throws Throwable {
+        anna.theUserClickOnGenderDropdownMenu();
+    }
+
+    @When("^the user select \"([^\"]*)\" option in Gender dropdown menu$")
+    public void theUserSelectOptionInGenderDropdownMenu(String arg0) throws Throwable {
+        anna.theUserSelectOptionInGenderDropdownMenu(arg0);
+    }
+
+    @When("^the user select \"([^\"]*)\" option in Country dropdown menu$")
+    public void theUserSelectOptionInCountryDropdownMenu(String arg0) throws Throwable {
+        anna.theUserSelectOptionInCountryDropdownMenu(arg0);
+    }
+
+    @Then("^\"([^\"]*)\" option should be selected$")
+    public void optionShouldBeSelected(String arg0) throws Throwable {
+        anna.optionShouldBeSelected(arg0);
+    }
+
+    @Then("^Welcome link at header part  should be translate like a  \"([^\"]*)\"$")
+    public void welcomeLinkAtHeaderPartShouldBeTranslateLikeA(String arg0) throws Throwable {
+        anna.welcomeLinkAtHeaderPartShouldBeTranslateLikeA(arg0);
+    }
+
+    @Then("^Slogan should be translated into chosen language$")
+    public void sloganShouldBeTranslatedIntoChosenLanguage() throws Throwable {
+        anna.sloganShouldBeTranslatedIntoChosenLanguage();
+    }
+
+    @Then("^Search button should be translated$")
+    public void searchButtonShouldBeTranslated() throws Throwable {
+        anna.searchButtonShouldBeTranslated();
+    }
+
+    @Then("^Welcome link at footer part should be translated like a \"([^\"]*)\"$")
+    public void welcomeLinkAtFooterPartShouldBeTranslatedLikeA(String arg0) throws Throwable {
+        anna.welcomeLinkAtFooterPartShouldBeTranslatedLikeA(arg0);
+    }
 }

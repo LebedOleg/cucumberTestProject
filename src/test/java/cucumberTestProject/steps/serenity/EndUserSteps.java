@@ -807,6 +807,74 @@ public class EndUserSteps {
     public void listOfLanguagesShouldBeCorrect(String arg0) {
         Assert.assertTrue(welcomePage.listOfLanguagesShouldBeCorrect(arg0));
     }
+
+    @Step
+    public void pageShouldContainMyAccountButton() {
+        Assert.assertTrue(signInPage.pageShouldContainMyAccountButton());
+    }
+
+    @Step
+    public void pageShouldContainLogOutButton() {
+        Assert.assertTrue(signInPage.pageShouldContainLogOutButton());
+    }
+
+    @Step
+    public void theUserClickOnReturnToFullPageButton() {
+        signInPage.theUserClickOnReturnToFullPageButton();
+    }
+    @Step
+    public void theUserEnterInDatePickerTextbox(String arg0) {
+        createNewAccountPage.theUserEnterInDatePickerTextbox(arg0);
+    }
+
+    @Step
+    public void theUserClearValueInDatePickerTextbox() {
+        createNewAccountPage.theUserClearValueInDatePickerTextbox();
+    }
+
+    @Step
+    public void enterValueInTextbox(String arg0, String arg1) {
+        createNewAccountPage.enterValueInTextbox(arg0,arg1);
+    }
+
+    @Step
+    public void errorMessageShouldDisappearNearOfTextbox(String arg0) {
+        Assert.assertFalse(createNewAccountPage.errorMessageShouldDisappearNearOfTextbox(arg0));
+    }
+
+    @Step
+    public void theUserClickOnGenderDropdownMenu() {
+        createNewAccountPage.theUserClickOnGenderDropdownMenu();
+    }
+    @Step
+    public void theUserSelectOptionInGenderDropdownMenu(String arg0) {
+        createNewAccountPage.theUserSelectOptionInGenderDropdownMenu(arg0);
+    }
+    @Step
+    public void theUserSelectOptionInCountryDropdownMenu(String arg0) {
+        createNewAccountPage.theUserSelectOptionInCountryDropdownMenu(arg0);
+    }
+    @Step
+    public void optionShouldBeSelected(String arg0) {
+      Assert.assertTrue(createNewAccountPage.optionShouldBeSelected(arg0));
+    }
+    @Step
+    public void welcomeLinkAtHeaderPartShouldBeTranslateLikeA(String arg0) {
+      Assert.assertThat(createNewAccountPage.welcomeLinkAtHeaderPartShouldBeTranslateLikeA(arg0), equalToIgnoringCase(arg0));
+    }
+    @Step
+    public void sloganShouldBeTranslatedIntoChosenLanguage() {
+        Assert.assertFalse(welcomePage.sloganShouldBeTranslatedIntoChosenLanguage());
+    }
+    @Step
+    public void searchButtonShouldBeTranslated() {
+        Assert.assertFalse(welcomePage.searchButtonShouldBeTranslated());
+    }
+
+    @Step
+    public void welcomeLinkAtFooterPartShouldBeTranslatedLikeA(String arg0) {
+        Assert.assertThat(createNewAccountPage.welcomeLinkAtHeaderPartShouldBeTranslateLikeA(arg0), equalToIgnoringCase(arg0));
+    }
 }
 
 
