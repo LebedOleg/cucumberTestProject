@@ -823,4 +823,13 @@ public class DefinitionSteps {
     public void welcomeLinkAtFooterPartShouldBeTranslatedLikeA(String arg0) throws Throwable {
         anna.welcomeLinkAtFooterPartShouldBeTranslatedLikeA(arg0);
     }
+
+
+
+    @When("^Enter \"([^\"]*)\"  in \"([^\"]*)\" field$")
+    public void enterInThatDoesnTHavePartAfterSymbol(String arg0, String arg1) throws Throwable {
+        anna.enterThatDoesnTHavePartAfterSymbol(arg0,arg1);
+    }
+
+
 }

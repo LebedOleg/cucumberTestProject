@@ -54,6 +54,41 @@ Scenario: test804
 #  When the user click on Country dropdown menu
   When the user select "armenia" option in Country dropdown menu
 #  Then
+
+
+  Scenario: test807 enter email that doesn't have part after  dot  symbol
+  When Enter "test@test"  in " Email Address " field
+    When the user click on SAVE button
+    Then Error message should appear at the right of " Email Address " textbox
+
+  Scenario: test808 enter Numeric characters in part before"@" symbol
+    When Enter "12345@test.com"  in " Email Address " field
+    When the user click on SAVE button
+    Then Error message should disappear near of " Email Address " textbox
+
+  Scenario: test808 enter Special characters in part before"@" symbol
+    When Enter "!@#$%@test"  in " Email Address " field
+    When the user click on SAVE button
+    Then Error message should appear at the right of " Email Address " textbox
+
+  Scenario: test809 enter Numeric characters in part after"@" symbol
+    When Enter "qwerty@123456.com"  in " Email Address " field
+    When the user click on SAVE button
+    Then Error message should disappear near of " Email Address " textbox
+
+  Scenario: test809  enter Special characters in part after"@" symbol
+    When Enter "qwerty@!@#$%.com"  in " Email Address " field
+    When the user click on SAVE button
+    Then Error message should appear at the right of " Email Address " textbox
+
+
+
+
+
+
+
+
+
 #
 # Scenario: test807
 #  When

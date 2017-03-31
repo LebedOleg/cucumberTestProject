@@ -99,4 +99,9 @@ public class CreateNewAccountPage extends PageObject {
     public String welcomeLinkAtHeaderPartShouldBeTranslateLikeA(String arg0) {
        return  $(ILocators.WELCOME_HEADER_MENULINK.replace("$1", arg0)).getText();
     }
+
+    public void enterThatDoesnTHavePartAfterSymbol(String arg0, String arg1) {
+        $(ILocators.CREATE_ACCOUNT_INPUT_FIELD.replace("$1", arg1)).sendKeys(arg0);
+    }
+
 }

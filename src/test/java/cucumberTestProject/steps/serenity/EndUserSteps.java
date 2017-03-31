@@ -875,6 +875,11 @@ public class EndUserSteps {
     public void welcomeLinkAtFooterPartShouldBeTranslatedLikeA(String arg0) {
         Assert.assertThat(createNewAccountPage.welcomeLinkAtHeaderPartShouldBeTranslateLikeA(arg0), equalToIgnoringCase(arg0));
     }
+
+    public void enterThatDoesnTHavePartAfterSymbol(String arg0, String arg1) {
+        createNewAccountPage.enterThatDoesnTHavePartAfterSymbol(arg0, arg1);
+    }
+
 }
 
 
