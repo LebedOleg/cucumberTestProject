@@ -74,7 +74,7 @@ public class WelcomePage extends PageObject {
 
 
     public void clickOnSignInLink() {
-        withTimeoutOf(16, TimeUnit.SECONDS).waitFor(ExpectedConditions.elementToBeClickable(By.xpath(ILocators.SIGN_IN)));
+        withTimeoutOf(16, TimeUnit.SECONDS).waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath(ILocators.SIGN_IN)));
         $(ILocators.SIGN_IN).click();
     }
 

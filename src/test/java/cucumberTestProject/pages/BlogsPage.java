@@ -39,6 +39,7 @@ public class BlogsPage extends PageObject {
 
 
     public void theUserClickOnTitleOfTheBlogEntry(String arg0) {
+        withTimeoutOf(16, TimeUnit.SECONDS).waitFor(ExpectedConditions.elementToBeClickable(By.xpath(ILocators.BLOG_ENTRY_TITLE.replace("$1", arg0))));
         $(ILocators.BLOG_ENTRY_TITLE.replace("$1", arg0)).click();
     }
 
