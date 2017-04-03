@@ -30,6 +30,7 @@ public class ProductsPage extends PageObject {
 
 
     public boolean itemShouldHaveTitle() {
+        withTimeoutOf(16, TimeUnit.SECONDS).waitFor(ExpectedConditions.presenceOfElementLocated(By.xpath(ILocators.PRODUCTS_DESCRIPTION_PAGE_TITLE)));
         return $(ILocators.PRODUCTS_DESCRIPTION_PAGE_TITLE).isPresent();
     }
 

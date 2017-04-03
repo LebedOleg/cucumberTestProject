@@ -4,14 +4,14 @@ Feature: Sign In page
     Given user is on Sign In page
 
 
-  Scenario Outline: test1
-    When the user click on "<icon>"
-    Then URL should change to "<URL>"
-    Examples:
-    |icon    |URL                      |
-    |LinkedIn|https://www.linkedin.com |
-    |Twitter |https://api.twitter.com  |
-    |Google+ |https://plus.google.com  |
+#  Scenario Outline: test1
+#    When the user click on "<icon>"
+#    Then URL should change to "<URL>"
+#    Examples:
+#    |icon    |URL                      |
+#    |LinkedIn|https://www.linkedin.com |
+#    |Twitter |https://api.twitter.com  |
+#    |Google+ |https://plus.google.com  |
 
   Scenario: test 502
   When the user click on "Facebook"
@@ -19,10 +19,10 @@ Feature: Sign In page
 
 
 
-  Scenario: test2
-    When the user click on SIGN IN link on SIGN IN page
-    Then error message should appear above " Email Address " textbox
-    Then error message should appear above " Password " textbox
+#  Scenario: test2
+#    When the user click on SIGN IN link on SIGN IN page
+#    Then error message should appear above " Email Address " textbox
+#    Then error message should appear above " Password " textbox
 
   Scenario: test3
     When Enter "qwerty" in "login" textbox on SIGN IN page
@@ -50,10 +50,10 @@ Feature: Sign In page
     Then Page should contain My Account button
     Then Page should contain Log Out button
 
-  Scenario: test 607 click on Return to the Full page button
-    When the user click on Return to Full Page button
-    Then Page should have the "Welcome - ict4apps" title
-    Then Page should have "http://88.198.7.89:8100/web/guest/welcome" URL
+#  Scenario: test 607 click on Return to the Full page button
+#    When the user click on Return to Full Page button
+#    Then Page should have the "Welcome - ict4apps" title
+#    Then Page should have "http://88.198.7.89:8100/web/guest/welcome" URL
 
 
   Scenario: test5
