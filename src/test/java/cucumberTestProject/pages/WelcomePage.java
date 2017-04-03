@@ -30,8 +30,8 @@ public class WelcomePage extends PageObject {
 
 
     public void clickOnMenuLink(String arg0, String arg1) {
-        withTimeoutOf(3, TimeUnit.SECONDS);
-        $(ILocators.WELCOME_HEADER_MENULINK.replace("$1", arg0).replace("$2", arg1)).waitUntilClickable().click();
+        withTimeoutOf(3, TimeUnit.SECONDS).waitFor(ExpectedConditions.elementToBeClickable(By.xpath(ILocators.WELCOME_HEADER_MENULINK.replace("$1", arg0).replace("$2", arg1))));
+        $(ILocators.WELCOME_HEADER_MENULINK.replace("$1", arg0).replace("$2", arg1)).click();
     }
 
     public boolean imageCarouselTitleIsPresent() {
@@ -74,6 +74,7 @@ public class WelcomePage extends PageObject {
 
 
     public void clickOnSignInLink() {
+        withTimeoutOf(16, TimeUnit.SECONDS).waitFor(ExpectedConditions.elementToBeClickable(By.xpath(ILocators.SIGN_IN)));
         $(ILocators.SIGN_IN).click();
     }
 

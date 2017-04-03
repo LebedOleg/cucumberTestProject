@@ -90,6 +90,7 @@ public class ProductsPage extends PageObject {
     }
 
     public String getCurrentShowingResultsLabel() {
+        withTimeoutOf(16, TimeUnit.SECONDS).waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath(ILocators.PRODUCTS_PAGE_SHOWING_RESULTS_PAGE)));
         return  $(ILocators.PRODUCTS_PAGE_SHOWING_RESULTS_PAGE).getText();
     }
 
@@ -103,6 +104,7 @@ public class ProductsPage extends PageObject {
     }
 
     public void theUserSelectItemInItemsPerPageDropdownMenu(String arg0) {
+        withTimeoutOf(16, TimeUnit.SECONDS).waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath(ILocators.SPECIAL_OFFERS_PAGE_ITEMS_PER_PAGE_DROPDOWN_ITEM.replace("$1", arg0))));
         $(ILocators.SPECIAL_OFFERS_PAGE_ITEMS_PER_PAGE_DROPDOWN_ITEM.replace("$1", arg0)).click();
     }
 
@@ -119,6 +121,7 @@ public class ProductsPage extends PageObject {
     }
 
     public boolean searchPageShouldHaveSearchButton() {
+        withTimeoutOf(16, TimeUnit.SECONDS).waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath(ILocators.SEARCH_PAGE_SEARCH_BUTTON)));
         return $(ILocators.SEARCH_PAGE_SEARCH_BUTTON).isPresent();
     }
 
@@ -138,6 +141,7 @@ public class ProductsPage extends PageObject {
 
 
     public void theUserClickOnIconInProduct(String arg0, String arg1) {
+        withTimeoutOf(16, TimeUnit.SECONDS).waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath(ILocators.PRODUCTS_PAGE_SOCIAL_NETWORK_ICON.replace("$2", arg0).replace("$1", arg1))));
         $(ILocators.PRODUCTS_PAGE_SOCIAL_NETWORK_ICON.replace("$2", arg0).replace("$1", arg1)).click();
     }
 
