@@ -4,10 +4,11 @@ import cucumberTestProject.ILocators;
 import net.serenitybdd.core.Serenity;
 import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.pages.PageObject;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import javax.swing.*;
 
@@ -23,6 +24,7 @@ import static org.yecht.LevelStatus.header;
 
 @DefaultUrl("http://88.198.7.89:8100/web/guest/blogs")
 public class BlogsPage extends PageObject {
+
 
     String header;
     String numberOfPages;
@@ -103,6 +105,7 @@ public class BlogsPage extends PageObject {
 
     public void theUserClickOnPreviousLink() {
         header = $(ILocators.BLOG_DESCRIPTION_PAGE_BREADCRUMB).getText();
+
         $(ILocators.BLOG_DESCRIPTION_PAGE_PREVIOUS_BUTTON).click();
     }
 
@@ -117,7 +120,8 @@ public class BlogsPage extends PageObject {
     }
 
     public boolean entryShouldContainLinkedImage(String arg0) {
-        withTimeoutOf(16, TimeUnit.SECONDS).waitFor(ExpectedConditions.presenceOfElementLocated(By.xpath(ILocators.BLOG_DESCRIPTION_PAGE_SOCIAL_ICON.replace("$1",arg0))));
+        withTimeoutOf(16, TimeUnit.SECONDS).waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath(ILocators.BLOG_DESCRIPTION_PAGE_SOCIAL_ICON.replace("$1",arg0))));
+
         return $(ILocators.BLOG_DESCRIPTION_PAGE_SOCIAL_ICON.replace("$1",arg0)).isVisible();
     }
 
