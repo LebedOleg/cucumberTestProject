@@ -13,6 +13,7 @@ import org.junit.runner.RunWith;
         "src/test/resources/features/Ict4appsContactUsPage.feature",
         "src/test/resources/features/Ict4appsSignInPage.feature",
         "src/test/resources/features/Ict4appsCreateAccountPage.feature",
+        "src/test/resources/features/Ict4appsSearchPage.feature"
 //        "src/test/resources/features/Ict4appsCreateLocalizationPage.feature",
 //        "src/test/resources/features/Ict4appsCreateSearchPage.feature"
 
