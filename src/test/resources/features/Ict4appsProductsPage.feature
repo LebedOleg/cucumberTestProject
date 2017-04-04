@@ -4,7 +4,7 @@ Feature: Products Page
     Given the user is on products page
 
 
-  Scenario Outline: test101
+  Scenario Outline: test25
     When the user click on title of the "<number of product>"
     Then Product should have title, description and image
     When the user click on ReadMore link of the "<number of product>"
@@ -17,7 +17,7 @@ Feature: Products Page
       |6                |
       |12               |
 
-  Scenario Outline: 102
+  Scenario Outline: 26
     When the user click on "VKontakte" icon  in "<Number of product>" product
     Then page should contain "http://oauth.vk.com" part in URL
 #    When the user click on "Facebook" icon  in "1" product
@@ -46,7 +46,7 @@ Feature: Products Page
 #    |4             |Showing 37 - 48 Of 98 Results |
 #    |9             |Showing 97 - 98 Of 98 Results |
 
-   Scenario Outline: 103
+   Scenario Outline: 27
      When the user click on items per page dropdown menu
      When the user select "<Number of showing items>" item in items per page dropdown menu
      Then label that showing number of results should change to "<Expected state>"
@@ -60,7 +60,7 @@ Feature: Products Page
 
 
 
-    Scenario: 104
+    Scenario: 28
       When the user open  product that have three images, "5" product in "Appetizers" category
       When the user click on main image in product description page
       Then Close button and right arrow should be at image gallery
@@ -79,27 +79,27 @@ Feature: Products Page
 #      |Last →   |Showing 97 - 98 Of 98 Results |
 #      |← First  |Showing 1 - 12 Of 98 Results  |
 
-  Scenario: 105
+  Scenario: 29
     When the user click on "th-large" view icon
     Then products list should change it's view on grid
    When the user click on "list" view icon
     Then products list should change it's view on list
 
-    Scenario: 106
+    Scenario: 30
       When the user click on search button
       Then search page should have search field
       Then search page should have scope dropdown menu
       Then search page should have search button
 
-  Scenario: 107
+  Scenario: 31
   Then Page should contain "ict4apps" in first part of breadcrumb
     Then Page should contain "Products" in second part of breadcrumb
 
-  Scenario: test188
+  Scenario: 32
     When the user click on "Special Offer"th category in category list
     Then Page should have "Special Offer" in third part of breadcrumb
 
-  Scenario: 108
+  Scenario: 33
     When the user open list with subcategories of "Desserts" category
     When the user click on "Cakes" subcategory
     Then Page should have "Cakes" in fourth part of breadcrumb
@@ -108,12 +108,12 @@ Feature: Products Page
     When the user click on "Cakes" part of breadcrumb
     Then Page should have "http://88.198.7.89:8100/web/guest/products/-/category/cakes" URL
 
-  Scenario: 109
+  Scenario: 34
     When the user click on "Products" part of breadcrumb
     Then Page should have the "Products - ict4apps" title
     Then Page should have "http://88.198.7.89:8100/web/guest/products" URL
 
-  Scenario: 110
+  Scenario: 35
     When the user click on "ict4apps" part of breadcrumb
     Then Page should have the "Welcome - ict4apps" title
     Then Page should have "http://88.198.7.89:8100/web/guest" URL

@@ -3,7 +3,7 @@ Feature: Contact Us page
   Background:
     Given User is on Contact Us page
 
-   Scenario: test401
+   Scenario: test61
      When the user click on SEND button
      Then error message appears above " Name * " textbox
      Then error message appears above " Email * " textbox

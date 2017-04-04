@@ -4,7 +4,7 @@ Background:
   Given the user is on Search page
 
 
-Scenario: test 001
+Scenario: test 80
   When the user click on Scope dropdown menu
   When the user select "Global" option
   When the user enter "food" in search textbox
@@ -12,7 +12,7 @@ Scenario: test 001
   Then CLEAR button is appears
   Then list with search results should contain " Blogs Entry "
 
-  Scenario: test 002
+  Scenario: test 81
     When the user click on Scope dropdown menu
     When the user select "Global" option
     When the user enter "food" in search textbox
@@ -20,7 +20,7 @@ Scenario: test 001
     Then CLEAR button is appears
     Then list with search results should contain " Products Entry "
 
-  Scenario: test 003
+  Scenario: test 82
     When the user click on Scope dropdown menu
     When the user select "Global" option
     When the user enter "food" in search textbox

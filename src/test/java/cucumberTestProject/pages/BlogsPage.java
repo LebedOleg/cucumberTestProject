@@ -39,7 +39,7 @@ public class BlogsPage extends PageObject {
 
 
     public void theUserClickOnTitleOfTheBlogEntry(String arg0) {
-        withTimeoutOf(16, TimeUnit.SECONDS).waitFor(ExpectedConditions.elementToBeClickable(By.xpath(ILocators.BLOG_ENTRY_TITLE.replace("$1", arg0))));
+        withTimeoutOf(5, TimeUnit.SECONDS).waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath(ILocators.BLOG_ENTRY_TITLE.replace("$1", arg0))));
         $(ILocators.BLOG_ENTRY_TITLE.replace("$1", arg0)).click();
     }
 
@@ -76,7 +76,7 @@ public class BlogsPage extends PageObject {
 
 
     public boolean websiteContainsTitleOfPostThatWasChosen() {
-        withTimeoutOf(16, TimeUnit.SECONDS).waitFor(ExpectedConditions.presenceOfElementLocated(By.xpath(ILocators.HEADER_ON_SOURCE_PAGE.replace("$1", header))));
+        withTimeoutOf(5, TimeUnit.SECONDS).waitFor(ExpectedConditions.presenceOfElementLocated(By.xpath(ILocators.HEADER_ON_SOURCE_PAGE.replace("$1", header))));
         boolean a = $(ILocators.HEADER_ON_SOURCE_PAGE.replace("$1", header)).isPresent();
 //        boolean a = $(ILocators.HEADER_ON_SOURCE_PAGE.replace("$1", header)).isPresent();
         getDriver().close();
