@@ -880,6 +880,49 @@ public class EndUserSteps {
         createNewAccountPage.enterThatDoesnTHavePartAfterSymbol(arg0, arg1);
     }
 
+    @Step
+    public void theUserClickOnRightScrollButton() {
+        welcomePage.theUserClickOnRightScrollButton();
+    }
+
+    @Step
+    public void newItemsShouldAppearInSpecialOffersImageCarousel() {
+        Assert.assertNotEquals(welcomePage.specialOffersCarouselFirstTitle(), welcomePage.getFirstTileSpecialCarousel());
+    }
+    @Step
+    public void theUserClickOnLeftScrollButton() {
+        welcomePage.theUserClickOnLeftScrollButton();
+    }
+
+    @Step
+    public void theUserClickOnRightScrollButtonInCategoryImageCarousel() {
+        welcomePage.theUserClickOnRightScrollButtonInCategoryImageCarousel();
+    }
+
+    @Step
+    public void newItemsShouldAppearInCategoryImageCarousel() {
+        Assert.assertNotEquals(welcomePage.categoryCarouselFirstTitle(), welcomePage.getFirstTitleCategoryCarousel());
+    }
+
+    @Step
+    public void theUserClickOnLeftScrollButtonInCategoryImageCarousel() {
+        welcomePage.theUserClickOnLeftScrollButtonInCategoryImageCarousel();
+    }
+
+    @Step
+    public void theUserClickOnRightScrollButtonInReviewImageCarousel() {
+        welcomePage.theUserClickOnRightScrollButtonInReviewImageCarousel();
+    }
+
+    @Step
+    public void newItemShouldAppearInReviewImageCarousel() {
+        Assert.assertNotEquals(welcomePage.reviewCarouselItemTitle(), welcomePage.getTitleReviewCarousel());
+    }
+
+    @Step
+    public void theUserClickOnLeftScrollButtonInReviewImageCarousel() {
+        welcomePage.theUserClickOnLeftScrollButtonInReviewImageCarousel();
+    }
 }
 
 

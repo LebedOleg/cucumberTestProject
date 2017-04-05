@@ -22,6 +22,9 @@ public class WelcomePage extends PageObject {
 
 
     List<String> languageList = new ArrayList<>();
+    String specialOffersFirstTitleItem ;
+    String categoryFirstTitleItem;
+    String reviewItemTitle;
 
     public String getCurrentTitle() {
         String title = getTitle();
@@ -267,6 +270,79 @@ public class WelcomePage extends PageObject {
         } catch (org.openqa.selenium.NoSuchElementException e) {
             return false;
         }
+    }
+
+    public void theUserClickOnRightScrollButton() {
+        Actions actions = new Actions(getDriver());
+        actions.moveToElement($(ILocators.WELCOME_PAGE_SPECIALOFFERS_IMAGE_CAROUSEL_TITLE_FIRST)).build().perform();
+       specialOffersFirstTitleItem = $(ILocators.WELCOME_PAGE_SPECIALOFFERS_IMAGE_CAROUSEL_TITLE_FIRST).getText();
+        $(ILocators.SPECIAL_IMAGE_CAROUSEL_NEXT).click();
+    }
+
+    public String specialOffersCarouselFirstTitle() {
+        Actions actions = new Actions(getDriver());
+        actions.moveToElement($(ILocators.WELCOME_PAGE_SPECIALOFFERS_IMAGE_CAROUSEL_TITLE_FIRST)).build().perform();
+       return  $(ILocators.WELCOME_PAGE_SPECIALOFFERS_IMAGE_CAROUSEL_TITLE_FIRST).getText();
+    }
+
+    public String getFirstTileSpecialCarousel() {
+        return specialOffersFirstTitleItem;
+    }
+
+    public void theUserClickOnLeftScrollButton() {
+        Actions actions = new Actions(getDriver());
+        actions.moveToElement($(ILocators.WELCOME_PAGE_SPECIALOFFERS_IMAGE_CAROUSEL_TITLE_FIRST)).build().perform();
+        specialOffersFirstTitleItem = $(ILocators.WELCOME_PAGE_SPECIALOFFERS_IMAGE_CAROUSEL_TITLE_FIRST).getText();
+        $(ILocators.SPECIAL_IMAGE_CAROUSEL_PREVIOUS).click();
+    }
+
+    public void theUserClickOnRightScrollButtonInCategoryImageCarousel() {
+        Actions actions = new Actions(getDriver());
+        actions.moveToElement($(ILocators.CATEGORY_IMAGE_CAROUSEL_FIRST_TITLE)).build().perform();
+        categoryFirstTitleItem = $(ILocators.CATEGORY_IMAGE_CAROUSEL_FIRST_TITLE).getText();
+        $(ILocators.CATAGORY_IMAGE_CAROUSEL_NEXT).click();
+    }
+
+    public String categoryCarouselFirstTitle() {
+        Actions actions = new Actions(getDriver());
+        actions.moveToElement($(ILocators.CATEGORY_IMAGE_CAROUSEL_FIRST_TITLE)).build().perform();
+        return  $(ILocators.CATEGORY_IMAGE_CAROUSEL_FIRST_TITLE).getText();
+    }
+
+    public String getFirstTitleCategoryCarousel() {
+        return categoryFirstTitleItem;
+    }
+
+    public void theUserClickOnLeftScrollButtonInCategoryImageCarousel() {
+        Actions actions = new Actions(getDriver());
+        actions.moveToElement($(ILocators.CATEGORY_IMAGE_CAROUSEL_FIRST_TITLE)).build().perform();
+        categoryFirstTitleItem = $(ILocators.CATEGORY_IMAGE_CAROUSEL_FIRST_TITLE).getText();
+        $(ILocators.CATEGORY_IMAGE_CAROUSEL_PREVIOUS).click();
+    }
+
+    public void theUserClickOnRightScrollButtonInReviewImageCarousel() {
+        Actions actions = new Actions(getDriver());
+        actions.moveToElement($(ILocators.REVIEW_IMAGE_CAROUSEL_CURRENT_ITEM)).build().perform();
+        reviewItemTitle = $(ILocators.REVIEW_IMAGE_CAROUSEL_CURRENT_ITEM).getText();
+        $(ILocators.REVIEW_IMAGE_CAROUSEL_NEXT).click();
+    }
+
+    public String reviewCarouselItemTitle() {
+        Actions actions = new Actions(getDriver());
+        actions.moveToElement($(ILocators.REVIEW_IMAGE_CAROUSEL_CURRENT_ITEM)).build().perform();
+        return  $(ILocators.REVIEW_IMAGE_CAROUSEL_CURRENT_ITEM).getText();
+
+    }
+
+    public String getTitleReviewCarousel() {
+        return reviewItemTitle;
+    }
+
+    public void theUserClickOnLeftScrollButtonInReviewImageCarousel() {
+        Actions actions = new Actions(getDriver());
+        actions.moveToElement($(ILocators.REVIEW_IMAGE_CAROUSEL_CURRENT_ITEM)).build().perform();
+        reviewItemTitle = $(ILocators.REVIEW_IMAGE_CAROUSEL_CURRENT_ITEM).getText();
+        $(ILocators.REVIEW_IMAGE_CAROUSEL_PREVIOUS).click();
     }
 }
 

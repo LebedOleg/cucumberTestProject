@@ -19,7 +19,7 @@ public interface ILocators {
     String WELCOME_PAGE_SOCIAL_BLOCK_FOOTER = ".//*[@id='atstbx']/div";
     String WELCOME_PAGE_FOOTER_SOCIAL_ICON = "(.//*[@id='atstbx']/div//span[@class='at-icon-wrapper'])[$1]";
     String WELCOME_PAGE_SLOGAN = "//*[contains(text(),'We offer the best meals at the best value to your door in no time')]";
-
+    String WELCOME_PAGE_SPECIALOFFERS_IMAGE_CAROUSEL_TITLE_FIRST = "(//div[@class='product-item slick-slide slick-active']//h3[@class='galery-product__title']/a)[1]";
 
     //TODO: LANGUAGE DROPDOWN MENU
     String LANGUAGE_DROPDOWN = "//div/select";
@@ -37,6 +37,7 @@ public interface ILocators {
     String ERROR_MESSAGE_REQUIRED = "(//div[contains(text(),'This field is required.')])[$1]";
     String SIGN_IN_INPUT = ".//*[@id='_58_$1']";
     String SPECIAL_IMAGE_CAROUSEL_NEXT = "(//button[contains(text(),'Next')])[1]";
+    String SPECIAL_IMAGE_CAROUSEL_PREVIOUS = "(//button[contains(text(),'Previous')])[1]";
     String From1 = "//div[@data-slick-index='0']//img";
     String To1 = "//div[@data-slick-index='2']//img";
     String From2 = "//div[@data-slick-index='2']//img";
@@ -45,10 +46,17 @@ public interface ILocators {
     String LANGUAGES_LIST = "//*[@id='_82_languageId']/option";
     String LANGUAGE_LIST_OPTION = "//select/option[contains(text(),' $1 ')]";
 
+    //TODO: REVIEW IMAGE CAROUSEL
+    String REVIEW_IMAGE_CAROUSEL_NEXT = "//ul[@class='slick-1 testimonials slick-initialized slick-slider']//button[text()='Next']";
+    String REVIEW_IMAGE_CAROUSEL_PREVIOUS = "//ul[@class='slick-1 testimonials slick-initialized slick-slider']//button[text()='Previous']";
+    String REVIEW_IMAGE_CAROUSEL_CURRENT_ITEM = "//li[@aria-hidden='false']//h4";
+
     //////////////////////////////////////////CATEGORY IMAGE CAROUSEL //////////////////////////////////////////
     String CATEGORY_IMAGE_CAROUSEL = "//div[@id='column-2']//li[@class!='slick-slide slick-cloned']/div[@class='item_content num_$1']/a";
     String CATAGORY_IMAGE_CAROUSEL_NEXT = "//ul[@class='slick-3 category-list-slide slick-initialized slick-slider']//button[contains(text(),'Next')]";
+    String CATEGORY_IMAGE_CAROUSEL_PREVIOUS = "//ul[@class='slick-3 category-list-slide slick-initialized slick-slider']//button[contains(text(),'Previous')]";
     String CATEGORY_IMAGE_CAROUSEL_TEXT = "//div[@id='column-2']//li[@class!='slick-slide slick-cloned']/div[@class='item_content num_$1']//h3";
+    String CATEGORY_IMAGE_CAROUSEL_FIRST_TITLE = "(//li[@class='slick-slide slick-active']//h3)[1]";
 
     /////////////////////////////////////////NEWS FEED ON WELCOME PAGE///////////////////////////////////////////
     String NEWS_FEED_ITEM_TITLE = "(//div[@class='asset-abstract']//a)[$1]";

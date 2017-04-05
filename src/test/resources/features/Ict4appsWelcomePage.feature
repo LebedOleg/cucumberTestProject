@@ -187,6 +187,30 @@ Feature: Lookup a definition
     Then Page should have "Demo ICT4APPS SERIES BASIC" title
     Then Page should have install button
 
+  Scenario: test Scroll Special offers image carousel to right
+    When the user click on right scroll button
+    Then New items should appear in Special offers image carousel
+
+  Scenario: test Scroll Special offers image carousel to left
+    When the user click on left scroll button
+    Then New items should appear in Special offers image carousel
+
+  Scenario: test Scroll Category image carousel to right
+    When the user click on right scroll button in Category image carousel
+    Then New items should appear in Category image carousel
+
+  Scenario: test Scroll Category image carousel to left
+    When the user click on left scroll button in Category image carousel
+    Then New items should appear in Category image carousel
+
+  Scenario: test Scroll Review image carousel to right
+    When the user click on right scroll button in Review image carousel
+    Then New item should appear in Review image carousel
+
+  Scenario: test Scroll Review image carousel to left
+    When the user click on left scroll button in Review image carousel
+    Then New item should appear in Review image carousel
+
 
 
 

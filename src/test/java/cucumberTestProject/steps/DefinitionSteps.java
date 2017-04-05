@@ -18,14 +18,10 @@ public class DefinitionSteps {
     EndUserSteps anna;
 
 
-
-
-
     @Given("^the user is on Ictapps home page$")
     public void theUserIsOnIctappsHomePage() throws Throwable {
         anna.go_to_start_page();
     }
-
 
 
     @Given("^the user is on Ictapps start page$")
@@ -63,7 +59,6 @@ public class DefinitionSteps {
     }
 
 
-
     @When("^the user select \"([^\"]*)\" in language dropdown menu$")
     public void theUserSelectInLanguageDropdownMenu(String arg0) throws Throwable {
         anna.select_language_dropdown_item(arg0);
@@ -76,14 +71,10 @@ public class DefinitionSteps {
     }
 
 
-
-
-
     @When("^the user click on SIGN IN link$")
     public void theUserClickOnSIGNINLink() throws Throwable {
         anna.click_on_sign_in_link();
     }
-
 
 
     @When("^the user move mouse cursor on \"([^\"]*)\" in OUR SPECIAL OFFERS picture carousel$")
@@ -140,13 +131,10 @@ public class DefinitionSteps {
     }
 
 
-
     @Then("^Page with item description should have - title, image, description$")
     public void pageWithItemDescriptionShouldHaveTitleImageDescription() throws Throwable {
         anna.pageWithItemDescriptionShouldHaveTitleImageDescription();
     }
-
-
 
 
     @Then("^After click on  of \"([^\"]*)\" page with description should have - title$")
@@ -236,7 +224,6 @@ public class DefinitionSteps {
     public void searchPageShouldHaveSearchButton() throws Throwable {
         anna.searchPageShouldHaveSearchButton();
     }
-
 
 
     @Then("^page should contain \"([^\"]*)\" part in URL$")
@@ -347,7 +334,6 @@ public class DefinitionSteps {
     }
 
 
-
     @When("^the user click on View Original Post link$")
     public void theUserClickOnViewOriginalPostLink() throws Throwable {
         anna.theUserClickOnViewOriginalPostLink();
@@ -426,7 +412,7 @@ public class DefinitionSteps {
 
     @When("^Enter \"([^\"]*)\" in \"([^\"]*)\" textbox$")
     public void enterInTextbox(String arg0, String arg1) throws Throwable {
-        anna.enterInTextbox(arg0,arg1);
+        anna.enterInTextbox(arg0, arg1);
     }
 
     @Then("^error message above \"([^\"]*)\" should disappear$")
@@ -441,7 +427,7 @@ public class DefinitionSteps {
 
     @When("^Enter \"([^\"]*)\" in \"([^\"]*)\" entry area$")
     public void enterInEntryArea(String arg0, String arg1) throws Throwable {
-        anna.enterInEntryArea(arg0,arg1);
+        anna.enterInEntryArea(arg0, arg1);
     }
 
     @When("^the user click on \"([^\"]*)\"$")
@@ -466,7 +452,7 @@ public class DefinitionSteps {
 
     @When("^Enter \"([^\"]*)\" in \"([^\"]*)\" textbox on SIGN IN page$")
     public void enterInTextboxOnSIGNINPage(String arg0, String arg1) throws Throwable {
-        anna.enterInTextboxOnSIGNINPage(arg0,arg1);
+        anna.enterInTextboxOnSIGNINPage(arg0, arg1);
     }
 
     @Then("^error message above the \"([^\"]*)\" textbox should disappear$")
@@ -503,7 +489,6 @@ public class DefinitionSteps {
     public void theUserClickOnSAVEButton() throws Throwable {
         anna.theUserClickOnSAVEButton();
     }
-
 
 
     @Then("^Error message should appear at the right of \"([^\"]*)\" textbox$")
@@ -543,8 +528,6 @@ public class DefinitionSteps {
     }
 
 
-
-
     @Then("^Page should have \"([^\"]*)\" URL$")
     public void pageShouldHaveURL(String arg0) throws Throwable {
         anna.pageShouldHaveURL(arg0);
@@ -552,7 +535,7 @@ public class DefinitionSteps {
 
     @Then("^Page have right header$")
     public void pageHaveRightHeader() throws Throwable {
-       anna.pageHaveRightHeader();
+        anna.pageHaveRightHeader();
     }
 
     @Then("^Page have \"([^\"]*)\" textbox$")
@@ -609,7 +592,7 @@ public class DefinitionSteps {
 
     @When("^the user click on \"([^\"]*)\" link \"([^\"]*)\"$")
     public void theUserClickOnLink(String arg0, String arg1) throws Throwable {
-        anna.click_menu_link(arg0,arg1);
+        anna.click_menu_link(arg0, arg1);
     }
 
     @When("^the user click on \"([^\"]*)\"th GOOGLEPLAY link$")
@@ -644,7 +627,7 @@ public class DefinitionSteps {
 
     @When("^the user click on SEARCH button$")
     public void theUserClickOnSEARCHButton() throws Throwable {
-       anna.theUserClickOnSEARCHButton();
+        anna.theUserClickOnSEARCHButton();
     }
 
     @Then("^CLEAR button is appears$")
@@ -670,7 +653,7 @@ public class DefinitionSteps {
 
     @When("^the user click on title of \"([^\"]*)\"th \"([^\"]*)\"$")
     public void theUserClickOnTitleOfTh(String arg0, String arg1) throws Throwable {
-        anna.theUserClickOnTitleOfTh(arg0,arg1);
+        anna.theUserClickOnTitleOfTh(arg0, arg1);
     }
 
     @Then("^Entry should contain \"([^\"]*)\" linked image$")
@@ -776,7 +759,7 @@ public class DefinitionSteps {
 
     @When("^Enter \"([^\"]*)\" value in \"([^\"]*)\" textbox$")
     public void enterValueInTextbox(String arg0, String arg1) throws Throwable {
-        anna.enterValueInTextbox(arg0,arg1);
+        anna.enterValueInTextbox(arg0, arg1);
     }
 
     @Then("^Error message should disappear near of \"([^\"]*)\" textbox$")
@@ -825,11 +808,54 @@ public class DefinitionSteps {
     }
 
 
-
     @When("^Enter \"([^\"]*)\"  in \"([^\"]*)\" field$")
     public void enterInThatDoesnTHavePartAfterSymbol(String arg0, String arg1) throws Throwable {
-        anna.enterThatDoesnTHavePartAfterSymbol(arg0,arg1);
+        anna.enterThatDoesnTHavePartAfterSymbol(arg0, arg1);
     }
 
 
+    @When("^the user click on right scroll button$")
+    public void theUserClickOnRightScrollButton() throws Throwable {
+        anna.theUserClickOnRightScrollButton();
+    }
+
+    @Then("^New items should appear in Special offers image carousel$")
+    public void newItemsShouldAppearInSpecialOffersImageCarousel() throws Throwable {
+        anna.newItemsShouldAppearInSpecialOffersImageCarousel();
+    }
+
+    @When("^the user click on left scroll button$")
+    public void theUserClickOnLeftScrollButton() throws Throwable {
+        anna.theUserClickOnLeftScrollButton();
+    }
+
+    @When("^the user click on right scroll button in Category image carousel$")
+    public void theUserClickOnRightScrollButtonInCategoryImageCarousel() throws Throwable {
+        anna.theUserClickOnRightScrollButtonInCategoryImageCarousel();
+    }
+
+    @Then("^New items should appear in Category image carousel$")
+    public void newItemsShouldAppearInCategoryImageCarousel() throws Throwable {
+        anna.newItemsShouldAppearInCategoryImageCarousel();
+    }
+
+    @When("^the user click on left scroll button in Category image carousel$")
+    public void theUserClickOnLeftScrollButtonInCategoryImageCarousel() throws Throwable {
+        anna.theUserClickOnLeftScrollButtonInCategoryImageCarousel();
+    }
+
+    @When("^the user click on right scroll button in Review image carousel$")
+    public void theUserClickOnRightScrollButtonInReviewImageCarousel() throws Throwable {
+        anna.theUserClickOnRightScrollButtonInReviewImageCarousel();
+    }
+
+    @Then("^New item should appear in Review image carousel$")
+    public void newItemShouldAppearInReviewImageCarousel() throws Throwable {
+        anna.newItemShouldAppearInReviewImageCarousel();
+    }
+
+    @When("^the user click on left scroll button in Review image carousel$")
+    public void theUserClickOnLeftScrollButtonInReviewImageCarousel() throws Throwable {
+        anna.theUserClickOnLeftScrollButtonInReviewImageCarousel();
+    }
 }
