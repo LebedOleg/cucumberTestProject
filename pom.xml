@@ -6,15 +6,22 @@
     <artifactId>cucumberTestProject</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <name>ict4apps</name>
+    <!--<name>ict4apps</name>-->
+    <name>Sample Serenity project using Cucumber and WebDriver</name>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <serenity.version>1.2.4</serenity.version>
-        <serenity.cucumber.version>1.1.11</serenity.cucumber.version>
+        <serenity.cucumber.version>1.1.27</serenity.cucumber.version>
+        <!--<webdriver.driver>firefox</webdriver.driver>-->
     </properties>
+
     <repositories>
         <repository>
-            <snapshots><enabled>false</enabled></snapshots>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
             <id>central</id>
             <name>bintray</name>
             <url>http://jcenter.bintray.com</url>
@@ -22,13 +29,26 @@
     </repositories>
     <pluginRepositories>
         <pluginRepository>
-            <snapshots><enabled>false</enabled></snapshots>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
             <id>central</id>
             <name>bintray-plugins</name>
             <url>http://jcenter.bintray.com</url>
         </pluginRepository>
     </pluginRepositories>
+
     <dependencies>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-htmlunit-driver</artifactId>
+            <version>2.52.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>3.2.0</version>
+        </dependency>
         <dependency>
             <groupId>net.serenity-bdd</groupId>
             <artifactId>serenity-core</artifactId>
@@ -43,7 +63,7 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
-            <version>1.7.25</version>
+            <version>1.7.21</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
@@ -53,8 +73,8 @@
         </dependency>
         <dependency>
             <groupId>org.assertj</groupId>
-            <artifactId>assertj-core-java8</artifactId>
-            <version>1.0.0m1</version>
+            <artifactId>assertj-core</artifactId>
+            <version>3.6.1</version>
         </dependency>
         <dependency>
             <groupId>com.googlecode.lambdaj</groupId>
@@ -68,24 +88,39 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.19.1</version>
-                <configuration><skip>true</skip></configuration>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
             </plugin>
             <plugin>
                 <artifactId>maven-failsafe-plugin</artifactId>
                 <version>2.19.1</version>
                 <configuration>
-                    <includes><include>**/*.java</include></includes>
+                    <includes>
+                        <include>**/*.java</include>
+                    </includes>
                     <argLine>-Xmx512m</argLine>
+                    <!--<systemPropertyVariables>-->
+                    <!--<webdriver.driver>${webdriver.driver}</webdriver.driver>-->
+                    <!--</systemPropertyVariables>-->
                 </configuration>
                 <executions>
-                    <execution><goals><goal>integration-test</goal><goal>verify</goal></goals></execution>
+                    <execution>
+                        <goals>
+                            <goal>integration-test</goal>
+                            <goal>verify</goal>
+                        </goals>
+                    </execution>
                 </executions>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.6.1</version>
-                <configuration><source>1.7</source><target>1.7</target></configuration>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>net.serenity-bdd.maven.plugins</groupId>
@@ -95,7 +130,12 @@
                     <execution>
                         <id>serenity-reports</id>
                         <phase>post-integration-test</phase>
-                        <goals><goal>aggregate</goal></goals>
+                        <goals>
+                            <goal>aggregate</goal>
+                        </goals>
                     </execution>
                 </executions>
-            </plugin></plugins></build></project>
+            </plugin>
+        </plugins>
+    </build>
+</project>
