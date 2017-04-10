@@ -19,10 +19,10 @@ Feature: Sign In page
 
 
 
-#  Scenario: test2
-#    When the user click on SIGN IN link on SIGN IN page
-#    Then error message should appear above " Email Address " textbox
-#    Then error message should appear above " Password " textbox
+  Scenario: test2
+    When the user click on SIGN IN link on SIGN IN page
+    Then error message should appear above " Email Address " textbox
+    Then error message should appear above " Password " textbox
 
   Scenario: test63
     When Enter "qwerty" in "login" textbox on SIGN IN page

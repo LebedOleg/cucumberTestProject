@@ -894,4 +894,44 @@ public class DefinitionSteps {
     public void theUserClickOnProductWithTwoImages() throws Throwable {
         anna.theUserClickOnProductWithTwoImages();
     }
+
+    @When("^the user move mouse cursor on first item of OUR SPECIAL OFFERS carousel and get value from it$")
+    public void theUserMoveMouseCursorOnFirstItemOfOURSPECIALOFFERSCarouselAndGetValueFromIt() throws Throwable {
+        anna.theUserMoveMouseCursorOnFirstItemOfOURSPECIALOFFERSCarouselAndGetValueFromIt();
+    }
+
+    @Then("^title of item should change$")
+    public void titleOfItemShouldChange() throws Throwable {
+        anna.titleOfItemShouldChange();
+    }
+
+    @Then("^description of item should change$")
+    public void descriptionOfItemShouldChange() throws Throwable {
+        anna.descriptionOfItemShouldChange();
+    }
+
+    @Then("^MORE link should be translate$")
+    public void moreLinkShouldBeTranslate() throws Throwable {
+        anna.moreLinkShouldBeTranslate();
+    }
+
+    @When("^the user move mouse cursor on first item  in Categories picture carousel$")
+    public void theUserMoveMouseCursorOnFirstItemInCategoriesPictureCarousel() throws Throwable {
+        anna.theUserMoveMouseCursorOnFirstItemInCategoriesPictureCarousel();
+    }
+
+    @When("^move mouse curcor on first item in Category image carousel$")
+    public void moveMouseCurcorOnFirstItemInCategoryImageCarousel() throws Throwable {
+        anna.moveMouseCurcorOnFirstItemInCategoryImageCarousel();
+    }
+
+    @Then("^title of item in Category image carousel should change$")
+    public void titleOfItemInCategoryImageCarouselShouldChange() throws Throwable {
+        anna.titleOfItemInCategoryImageCarouselShouldChange();
+    }
+
+    @When("^the user click on category with subcategory$")
+    public void theUserClickOnCategoryWithSubcategory() throws Throwable {
+        anna.theUserClickOnCategoryWithSubcategory();
+    }
 }

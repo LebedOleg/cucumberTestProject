@@ -17,3 +17,33 @@ Feature: Localization
      | italiano   | Benvenuto |
      | українська | Головна   |
      | русский    | Главная   |
+
+   Scenario Outline: ltest 2
+     When the user move mouse cursor on first item of OUR SPECIAL OFFERS carousel and get value from it
+     When the user click on the language dropdown menu
+     When the user select "<item>" in language dropdown menu
+     When the user move mouse cursor on "1" in OUR SPECIAL OFFERS picture carousel
+     Then title of item should change
+     Then description of item should change
+     Then MORE link should be translate
+     Examples:
+     |item|
+     |English|
+     |italiano|
+     |українська|
+     |русский   |
+
+   Scenario Outline: ltest 3
+     When the user move mouse cursor on first item  in Categories picture carousel
+     When the user click on the language dropdown menu
+     When the user select "<item>" in language dropdown menu
+     When move mouse curcor on first item in Category image carousel
+     Then title of item in Category image carousel should change
+     Examples:
+       |item|
+       |English|
+       |italiano|
+       |українська|
+       |русский   |
+
+

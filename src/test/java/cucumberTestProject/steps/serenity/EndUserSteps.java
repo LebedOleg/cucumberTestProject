@@ -955,6 +955,45 @@ public class EndUserSteps {
     public void theUserClickOnProductWithTwoImages() {
         specialOffersPage.theUserClickOnProductWithTwoImages();
     }
+
+    @Step
+    public void theUserMoveMouseCursorOnFirstItemOfOURSPECIALOFFERSCarouselAndGetValueFromIt() {
+        welcomePage.theUserMoveMouseCursorOnFirstItemOfOURSPECIALOFFERSCarouselAndGetValueFromIt();
+    }
+    @Step
+    public void titleOfItemShouldChange() {
+        Assert.assertNotEquals(welcomePage.getTitleOfSpecialCarouselItem(), welcomePage.getTitleVariable());
+    }
+
+    @Step
+    public void descriptionOfItemShouldChange() {
+        Assert.assertNotEquals(welcomePage.getDescriptionOfSpecialCarouselItem(), welcomePage.getDescriptionVariable());
+    }
+
+    @Step
+    public void moreLinkShouldBeTranslate() {
+        Assert.assertNotEquals(welcomePage.getMoreLinkOfSpecialCarouselItem(), welcomePage.getMoreLinkVariable());
+    }
+
+    @Step
+    public void theUserMoveMouseCursorOnFirstItemInCategoriesPictureCarousel() {
+        welcomePage.theUserMoveMouseCursorOnFirstItemInCategoriesPictureCarousel();
+    }
+
+    @Step
+    public void moveMouseCurcorOnFirstItemInCategoryImageCarousel() {
+        welcomePage.moveMouseCurcorOnFirstItemInCategoryImageCarousel();
+    }
+
+    @Step
+    public void titleOfItemInCategoryImageCarouselShouldChange() {
+        Assert.assertNotEquals(welcomePage.titleOfItemInCategoryImageCarouselShouldChange(), welcomePage.getCategoryTitleVariable());
+    }
+
+    @Step
+    public void theUserClickOnCategoryWithSubcategory() {
+        welcomePage.theUserClickOnCategoryWithSubcategory();
+    }
 }
 
 

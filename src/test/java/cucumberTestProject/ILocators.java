@@ -69,6 +69,7 @@ public interface ILocators {
 
     //TODO:CATEGORY LIST
     String CATEGORY_LIST_ITEM = "//li//a[text()='$1']";
+    String CATEGORY_WITH_SUBCATEGORY = "//div[@class='jqtree-element jqtree_common']//*[text()='Desserts']";
     String CATEGORY_LIST_SUBCATEGORY_LIST = "//span[text()='$1']/../a[text()='►']";
     String CATEGORY_LIST_SUBCATEGORY_ITEM = "//a[text()='$1']";
     String CATEGORY_LIST_CATEGORY_FOLDER = "(//li[contains(@class,'jqtree_common jqtree-folder')])[1]";

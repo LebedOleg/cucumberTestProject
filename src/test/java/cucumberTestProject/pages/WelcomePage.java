@@ -25,6 +25,11 @@ public class WelcomePage extends PageObject {
     String specialOffersFirstTitleItem ;
     String categoryFirstTitleItem;
     String reviewItemTitle;
+    String title;
+    String description;
+    String moreLink;
+    String categoryTitle;
+    String firstItemTitle;
 
     public String getCurrentTitle() {
         String title = getTitle();
@@ -343,6 +348,70 @@ public class WelcomePage extends PageObject {
         actions.moveToElement($(ILocators.REVIEW_IMAGE_CAROUSEL_CURRENT_ITEM)).build().perform();
         reviewItemTitle = $(ILocators.REVIEW_IMAGE_CAROUSEL_CURRENT_ITEM).getText();
         $(ILocators.REVIEW_IMAGE_CAROUSEL_PREVIOUS).click();
+    }
+
+    public void theUserMoveMouseCursorOnFirstItemOfOURSPECIALOFFERSCarouselAndGetValueFromIt() {
+        Actions actions = new Actions(getDriver());
+        actions.moveToElement($(ILocators.IMAGE_CAROUSEL_ITEM.replace("$1", "1"))).build().perform();
+        title = $(ILocators.IMAGE_CAROUSEL_TITLE.replace("$1", "0")).getText();
+        description = $(ILocators.IMAGE_CAROUSEL_DESCRIPTION.replace("$1", "0")).getText();
+        moreLink = $(ILocators.IMAGE_CAROUSEL_MORE.replace("$1", "0")).getText();
+    }
+
+    public String getTitleOfSpecialCarouselItem() {
+        Actions actions = new Actions(getDriver());
+        actions.moveToElement($(ILocators.IMAGE_CAROUSEL_ITEM.replace("$1", "1"))).build().perform();
+        return $(ILocators.IMAGE_CAROUSEL_TITLE.replace("$1", "0")).getText();
+    }
+
+    public String getTitleVariable() {
+        return title;
+    }
+
+    public String getDescriptionVariable() {
+        return description;
+    }
+
+    public String getDescriptionOfSpecialCarouselItem() {
+        Actions actions = new Actions(getDriver());
+        actions.moveToElement($(ILocators.IMAGE_CAROUSEL_ITEM.replace("$1", "1"))).build().perform();
+        return $(ILocators.IMAGE_CAROUSEL_DESCRIPTION.replace("$1", "0")).getText();
+    }
+
+    public String getMoreLinkVariable() {
+        return moreLink;
+    }
+
+    public String getMoreLinkOfSpecialCarouselItem() {
+        Actions actions = new Actions(getDriver());
+        actions.moveToElement($(ILocators.IMAGE_CAROUSEL_ITEM.replace("$1", "1"))).build().perform();
+        return $(ILocators.IMAGE_CAROUSEL_MORE.replace("$1", "0")).getText();
+    }
+
+    public void theUserMoveMouseCursorOnFirstItemInCategoriesPictureCarousel() {
+        Actions actions = new Actions(getDriver());
+        actions.moveToElement($(ILocators.CATEGORY_IMAGE_CAROUSEL_FIRST_TITLE)).build().perform();
+        categoryTitle = $(ILocators.CATEGORY_IMAGE_CAROUSEL_FIRST_TITLE).getText();
+    }
+
+    public void moveMouseCurcorOnFirstItemInCategoryImageCarousel() {
+        Actions actions = new Actions(getDriver());
+        actions.moveToElement($(ILocators.CATEGORY_IMAGE_CAROUSEL_FIRST_TITLE)).build().perform();
+    }
+
+    public String titleOfItemInCategoryImageCarouselShouldChange() {
+        Actions actions = new Actions(getDriver());
+        actions.moveToElement($(ILocators.CATEGORY_IMAGE_CAROUSEL_FIRST_TITLE)).build().perform();
+        return $(ILocators.CATEGORY_IMAGE_CAROUSEL_FIRST_TITLE).getText();
+    }
+
+    public String getCategoryTitleVariable() {
+        return categoryTitle;
+    }
+
+    public void theUserClickOnCategoryWithSubcategory() {
+//        $(ILocators.)
+        $(ILocators.CATEGORY_WITH_SUBCATEGORY).click();
     }
 }
 
