@@ -858,4 +858,40 @@ public class DefinitionSteps {
     public void theUserClickOnLeftScrollButtonInReviewImageCarousel() throws Throwable {
         anna.theUserClickOnLeftScrollButtonInReviewImageCarousel();
     }
+
+    @When("^The user click on right arrow of image gallery$")
+    public void theUserClickOnRightArrowOfImageGallery() throws Throwable {
+        anna.theUserClickOnRightArrowOfImageGallery();
+    }
+
+    @Then("^Image should change$")
+    public void imageShouldChange() throws Throwable {
+        anna.imageShouldChange();
+    }
+
+    @When("^The user click on left arrow of image gallery$")
+    public void theUserClickOnLeftArrowOfImageGallery() throws Throwable {
+        anna.theUserClickOnLeftArrowOfImageGallery();
+    }
+
+    @Then("^Image should change to first$")
+    public void imageShouldChangeToFirst() throws Throwable {
+        anna.imageShouldChangeToFirst();
+    }
+
+    @When("^get current options list of Items per page drop down menu$")
+    public void getCurrentOptionsListOfItemsPerPageDropDownMenu() throws Throwable {
+        anna.getCurrentOptionsListOfItemsPerPageDropDownMenu();
+    }
+
+
+    @Then("^Items per page should be at correct order:$")
+    public void itemsPerPageShouldBeAtCorrectOrder(Map<Integer, String> arg0) throws Throwable {
+        anna.itemsPerPageShouldBeAtCorrectOrder(arg0);
+    }
+
+    @When("^the user click on product with two images$")
+    public void theUserClickOnProductWithTwoImages() throws Throwable {
+        anna.theUserClickOnProductWithTwoImages();
+    }
 }

@@ -54,4 +54,8 @@ public class SpecialOffersPage extends PageObject {
         $(ILocators.SPECIAL_OFFERS_PAGE_PAGES_DROPDOWNMENU_ITEM.replace("$1",arg0)).click();
 
     }
+
+    public void theUserClickOnProductWithTwoImages() {
+        $(ILocators.PRODUCTS_PAGE_TITLE_OF_ITEM.replace("$1", "3")).click();
+    }
 }

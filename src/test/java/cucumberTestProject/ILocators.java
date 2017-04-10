@@ -105,6 +105,7 @@ public interface ILocators {
     String IMAGE_GALLERY_CLOSE_BUTTON = "//button[@class='image-viewer-close close']";
     String IMAGE_GALLERY_RIGHT_ARROW = "//a[contains(text(),'›')]";
     String IMAGE_GALLERY_LEFT_ARROW = "//a[contains(text(),'‹')]";
+    String IMAGE_GALLERY_IMAGE = "//img[@class='image-viewer-image']";
 
     //TODO: PRODUCTS PAGE, PAGES DROPDOWN MENU
     String PRODUCTS_PAGE_PAGES_DROPDOWNMENU = "(//span [@class=\"lfr-icon-menu-text\"])[1]";
@@ -115,6 +116,7 @@ public interface ILocators {
 
     //TODO: PRODUCTS PAGE, ITEMS PER PAGE DROPDOWN MENU
     String PRODUCTS_PAGE_ITEMS_PER_PAGE_DROPDOWN = "(//span [@class=\"lfr-icon-menu-text\"])[2]";
+    String ITEMS_PER_PAGE_DROPDOWN_ITEMS_LIST = "//div[@class='open']//span";
     String PRODUCTS_PAGE_ITEMS_PER_PAGE_DROPDOWN_ITEM = "//a[@id='_PRODUCT_PORTLET_WAR_ict4appsportlet_tiym_column4_0_menu_$1']/span";  //Need a replace
 
     //TODO: PRODUCTS PAGE, PAGINATION BUTTON

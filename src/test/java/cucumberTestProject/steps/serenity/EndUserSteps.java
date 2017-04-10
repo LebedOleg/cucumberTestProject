@@ -923,6 +923,38 @@ public class EndUserSteps {
     public void theUserClickOnLeftScrollButtonInReviewImageCarousel() {
         welcomePage.theUserClickOnLeftScrollButtonInReviewImageCarousel();
     }
+    @Step
+    public void theUserClickOnRightArrowOfImageGallery() {
+        productsPage.theUserClickOnRightArrowOfImageGallery();
+    }
+
+    @Step
+    public void imageShouldChange() {
+        Assert.assertNotEquals(productsPage.getImageSrc(), productsPage.imageShouldChange());
+    }
+    @Step
+    public void theUserClickOnLeftArrowOfImageGallery() {
+        productsPage.theUserClickOnLeftArrowOfImageGallery();
+    }
+
+    @Step
+    public void imageShouldChangeToFirst() {
+        Assert.assertEquals(productsPage.getImageSrc(), productsPage.imageShouldChange());
+    }
+
+    @Step
+    public void getCurrentOptionsListOfItemsPerPageDropDownMenu() {
+        productsPage.getCurrentOptionsListOfItemsPerPageDropDownMenu();
+    }
+    @Step
+    public void itemsPerPageShouldBeAtCorrectOrder(Map<Integer, String> arg0) {
+        Assert.assertTrue(productsPage.itemsPerPageShouldBeAtCorrectOrder(arg0));
+    }
+
+    @Step
+    public void theUserClickOnProductWithTwoImages() {
+        specialOffersPage.theUserClickOnProductWithTwoImages();
+    }
 }
 
 

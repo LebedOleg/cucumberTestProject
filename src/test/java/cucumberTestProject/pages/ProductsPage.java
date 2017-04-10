@@ -15,6 +15,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import java.sql.Driver;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
@@ -26,7 +27,8 @@ import java.util.concurrent.TimeUnit;
 
 public class ProductsPage extends PageObject {
 
-
+    List<String> languageList = new ArrayList<>();
+      String imageSrc;
 
 
     public boolean itemShouldHaveTitle() {
@@ -200,8 +202,45 @@ public class ProductsPage extends PageObject {
         $(ILocators.BREADCRUMB_FIRST_ITEM.replace("$1",arg0)).click();
     }
 
+    public void theUserClickOnRightArrowOfImageGallery() {
+       imageSrc = $(ILocators.IMAGE_GALLERY_IMAGE).getAttribute("src");
+        $(ILocators.IMAGE_GALLERY_RIGHT_ARROW).click();
+
+    }
+
+    public String imageShouldChange() {
+       return  $(ILocators.IMAGE_GALLERY_IMAGE).getAttribute("src");
+    }
+
+    public String getImageSrc() {
+        return imageSrc;
+    }
+
+    public void theUserClickOnLeftArrowOfImageGallery() {
+        $(ILocators.IMAGE_GALLERY_LEFT_ARROW).click();
+    }
+
+    public void getCurrentOptionsListOfItemsPerPageDropDownMenu() {
+        $(ILocators.PRODUCTS_PAGE_ITEMS_PER_PAGE_DROPDOWN).click();
+        List<WebElementFacade> list = findAll(ILocators.ITEMS_PER_PAGE_DROPDOWN_ITEMS_LIST);
+        for (WebElement element : list) {
+          System.out.println(element.getText());
+            languageList.add(element.getText());
+        }
+    }
+
+    public boolean itemsPerPageShouldBeAtCorrectOrder(Map<Integer, String> arg0) {
+        for (String aLanguageList : languageList) {
+            if (aLanguageList.equalsIgnoreCase(String.valueOf(arg0))) {
+                return false;
+            }
+        }
+        return true;
+    }
+    }
+
 //    public void jsExecuter() {
 //        JavascriptExecutor js = (JavascriptExecutor)getDriver();
 //        js.executeScript("document.getElementById(\"yui_patched_v3_11_0_1_1489738072340_484\").nextSibling.click();");
 //    }
-}
+

@@ -64,6 +64,11 @@ Feature: Products Page
       When the user open  product that have three images, "5" product in "Appetizers" category
       When the user click on main image in product description page
       Then Close button and right arrow should be at image gallery
+      When The user click on right arrow of image gallery
+      Then Image should change
+      When The user click on left arrow of image gallery
+      Then Image should change to first
+#      Then Left arrow button should appear
       Then image gallery should be close after click on close button
 
 
@@ -117,5 +122,14 @@ Feature: Products Page
     When the user click on "ict4apps" part of breadcrumb
     Then Page should have the "Welcome - ict4apps" title
     Then Page should have "http://88.198.7.89:8100/web/guest" URL
+
+  Scenario: Items per page dropdown menu has items
+    When get current options list of Items per page drop down menu
+    Then Items per page should be at correct order:
+    |1|12|
+    |2|24|
+    |3|36|
+    |4|48|
+    |5|96|
 
 
