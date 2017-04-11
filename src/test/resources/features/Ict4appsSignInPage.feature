@@ -4,14 +4,14 @@ Feature: Sign In page
     Given user is on Sign In page
 
 
-#  Scenario Outline: test1
-#    When the user click on "<icon>"
-#    Then URL should change to "<URL>"
-#    Examples:
-#    |icon    |URL                      |
+  Scenario Outline: test1
+    When the user click on "<icon>"
+    Then URL should change to "<URL>"
+    Examples:
+    |icon    |URL                      |
 #    |LinkedIn|https://www.linkedin.com |
-#    |Twitter |https://api.twitter.com  |
-#    |Google+ |https://plus.google.com  |
+    |Twitter |https://api.twitter.com  |
+    |Google+ |https://plus.google.com  |
 
   Scenario: test 62
   When the user click on "Facebook"
