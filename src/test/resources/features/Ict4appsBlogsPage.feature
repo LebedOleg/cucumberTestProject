@@ -69,10 +69,7 @@ Feature: Blogs page
     Then Page should have "http://88.198.7.89:8100/web/guest/blogs" URL
 
 
-  Scenario: test59
-    When the user click on "ict4apps" part of breadcrumb
-    Then Page should have the "Welcome - ict4apps" title
-    Then Page should have "http://88.198.7.89:8100/web/guest" URL
+
 
 
   Scenario: test60
