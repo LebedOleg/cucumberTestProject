@@ -73,7 +73,7 @@ public interface ILocators {
     String CATEGORY_LIST_SUBCATEGORY_LIST = "//span[text()='$1']/../a[text()='►']";
     String CATEGORY_LIST_SUBCATEGORY_ITEM = "//a[text()='$1']";
     String CATEGORY_LIST_CATEGORY_FOLDER = "(//li[contains(@class,'jqtree_common jqtree-folder')])[1]";
-    String CATEGORY_LIST_SUBCATEGORY_ITEM2 = ".//a[text()='►']";
+    String CATEGORY_LIST_SUBCATEGORY_ITEM2 = "//a[text()='Desserts']/../..//a[text()='►']";
 
 
     //TODO: BREADCRUMB

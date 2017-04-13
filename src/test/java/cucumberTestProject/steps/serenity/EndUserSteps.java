@@ -994,6 +994,14 @@ public class EndUserSteps {
     public void theUserClickOnCategoryWithSubcategory() {
         welcomePage.theUserClickOnCategoryWithSubcategory();
     }
+    @Step
+    public void productsShouldChangeAfterCategoryIsOpened() {
+        Assert.assertNotEquals(welcomePage.productsShouldChangeAfterCategoryIsOpened(), welcomePage.getProductTitleVariable());
+    }
+    @Step
+    public void theUserClickOpenSubcategoriesList() {
+        welcomePage.theUserClickOpenSubcategoriesList();
+    }
 }
 
 

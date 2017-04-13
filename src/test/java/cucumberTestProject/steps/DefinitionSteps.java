@@ -934,4 +934,14 @@ public class DefinitionSteps {
     public void theUserClickOnCategoryWithSubcategory() throws Throwable {
         anna.theUserClickOnCategoryWithSubcategory();
     }
+
+    @Then("^Products should change after category is opened$")
+    public void productsShouldChangeAfterCategoryIsOpened() throws Throwable {
+        anna.productsShouldChangeAfterCategoryIsOpened();
+    }
+
+    @When("^the user click open subcategories list$")
+    public void theUserClickOpenSubcategoriesList() throws Throwable {
+        anna.theUserClickOpenSubcategoriesList();
+    }
 }

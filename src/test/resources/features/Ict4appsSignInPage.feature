@@ -29,12 +29,12 @@ Feature: Sign In page
     When the user click on SIGN IN link on SIGN IN page
     Then error message above the " Email Address " textbox should disappear
 
-  Scenario: test64
-    When Enter "qwerty" in "login" textbox on SIGN IN page
-    When Enter "qwerty" in "password" textbox on SIGN IN page
-    When the user click on SIGN IN link on SIGN IN page
-    Then Request failed to complete error message should appear
-    Then Please try again error message should appear
+#  Scenario: test64
+#    When Enter "qwerty" in "login" textbox on SIGN IN page
+#    When Enter "qwerty" in "password" textbox on SIGN IN page
+#    When the user click on SIGN IN link on SIGN IN page
+#    Then Request failed to complete error message should appear
+#    Then Please try again error message should appear
 
   Scenario: test 65 Correct login and incorrect password
     When Enter "test@test.com" in "login" textbox on SIGN IN page

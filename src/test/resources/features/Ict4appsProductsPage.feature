@@ -132,8 +132,10 @@ Feature: Products Page
     |4|48|
     |5|96|
 
-#  Scenario: Subcategory
-#    When the user click on category with subcategory
-#    Then
+  Scenario: Subcategory
+    When the user click on category with subcategory
+    Then Products should change after category is opened
+    When the user click open subcategories list
+#    Then subcategories list should be opened
 
 

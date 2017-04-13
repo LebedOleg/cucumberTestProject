@@ -29,7 +29,7 @@ public class WelcomePage extends PageObject {
     String description;
     String moreLink;
     String categoryTitle;
-    String firstItemTitle;
+    String productTitle;
 
     public String getCurrentTitle() {
         String title = getTitle();
@@ -410,8 +410,20 @@ public class WelcomePage extends PageObject {
     }
 
     public void theUserClickOnCategoryWithSubcategory() {
-//        $(ILocators.)
+        productTitle =  $(ILocators.PRODUCTS_PAGE_TITLE_OF_ITEM.replace("$1", "1")).getText();
         $(ILocators.CATEGORY_WITH_SUBCATEGORY).click();
+    }
+
+    public String getProductTitleVariable() {
+        return productTitle;
+    }
+
+    public String productsShouldChangeAfterCategoryIsOpened() {
+        return  $(ILocators.PRODUCTS_PAGE_TITLE_OF_ITEM.replace("$1", "1")).getText();
+    }
+
+    public void theUserClickOpenSubcategoriesList() {
+        $(ILocators.CATEGORY_LIST_SUBCATEGORY_ITEM2).click();
     }
 }
 
