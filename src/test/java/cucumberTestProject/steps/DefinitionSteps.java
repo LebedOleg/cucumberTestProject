@@ -944,4 +944,14 @@ public class DefinitionSteps {
     public void theUserClickOpenSubcategoriesList() throws Throwable {
         anna.theUserClickOpenSubcategoriesList();
     }
+
+    @When("^the user click on title of first product$")
+    public void theUserClickOnTitleOfFirstProduct() throws Throwable {
+        anna.theUserClickOnTitleOfFirstProduct();
+    }
+
+    @Then("^product should have category tag$")
+    public void productShouldHaveCategoryTag() throws Throwable {
+        anna.productShouldHaveCategoryTag();
+    }
 }

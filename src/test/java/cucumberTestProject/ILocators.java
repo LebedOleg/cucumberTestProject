@@ -73,7 +73,7 @@ public interface ILocators {
     String CATEGORY_LIST_SUBCATEGORY_LIST = "//span[text()='$1']/../a[text()='►']";
     String CATEGORY_LIST_SUBCATEGORY_ITEM = "//a[text()='$1']";
     String CATEGORY_LIST_CATEGORY_FOLDER = "(//li[contains(@class,'jqtree_common jqtree-folder')])[1]";
-    String CATEGORY_LIST_SUBCATEGORY_ITEM2 = "//a[text()='Desserts']/../..//a[text()='►']";
+    String CATEGORY_LIST_SUBCATEGORY_ITEM2 = "//li[@class='jqtree_common jqtree-folder jqtree-closed active']//a[text()='►']";
 
 
     //TODO: BREADCRUMB
@@ -92,6 +92,7 @@ public interface ILocators {
     String PRODUCTS_PAGE_IMAGE_OF_ITEM = "(//li[@class='b-product gallery--item gallery-list--item ']//img)[$1]"; //Need a replace
     String PRODUCTS_PAGE_READMORE_OF_ITEM = "(//li[@class='b-product gallery--item gallery-list--item ']//a[contains(text(),'Read More')])[$1]"; //Need a replace
     String PRODUCTS_PAGE_SOCIAL_NETWORK_ICON = "(//a[@title='$2'])[$1]";
+    String PRODUCTS_DESCRIPTION_TAG = "//i[@class='icon-tag']";
 
 
     //TODO: PRODUCTS DESCRIPTION PAGE, ELEMENTS

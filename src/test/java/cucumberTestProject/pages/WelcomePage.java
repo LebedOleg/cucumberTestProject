@@ -424,6 +424,7 @@ public class WelcomePage extends PageObject {
 
     public void theUserClickOpenSubcategoriesList() {
         $(ILocators.CATEGORY_LIST_SUBCATEGORY_ITEM2).click();
+        waitABit(3000);
     }
 }
 

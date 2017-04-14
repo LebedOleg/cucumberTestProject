@@ -1,5 +1,6 @@
 package cucumberTestProject.steps.serenity;
 
+import cucumber.api.java.tt.Һәм;
 import cucumberTestProject.ILocators;
 import cucumberTestProject.pages.*;
 import net.thucydides.core.annotations.DefaultUrl;
@@ -1001,6 +1002,14 @@ public class EndUserSteps {
     @Step
     public void theUserClickOpenSubcategoriesList() {
         welcomePage.theUserClickOpenSubcategoriesList();
+    }
+    @Step
+    public void theUserClickOnTitleOfFirstProduct() {
+        productsPage.theUserClickOnTitleOfFirstProduct();
+    }
+    @Step
+    public void productShouldHaveCategoryTag() {
+        Assert.assertTrue(productsPage.productShouldHaveCategoryTag());
     }
 }
 

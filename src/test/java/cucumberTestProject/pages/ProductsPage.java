@@ -237,7 +237,15 @@ public class ProductsPage extends PageObject {
         }
         return true;
     }
+
+    public void theUserClickOnTitleOfFirstProduct() {
+        $(ILocators.PRODUCTS_PAGE_TITLE_OF_ITEM.replace("$1", "1")).click();
     }
+
+    public boolean productShouldHaveCategoryTag() {
+        return $(ILocators.PRODUCTS_DESCRIPTION_TAG).isVisible();
+    }
+}
 
 //    public void jsExecuter() {
 //        JavascriptExecutor js = (JavascriptExecutor)getDriver();
