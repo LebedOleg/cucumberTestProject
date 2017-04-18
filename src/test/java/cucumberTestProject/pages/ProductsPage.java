@@ -245,6 +245,10 @@ public class ProductsPage extends PageObject {
     public boolean productShouldHaveCategoryTag() {
         return $(ILocators.PRODUCTS_DESCRIPTION_TAG).isVisible();
     }
+
+    public void theUserClickOnCategoryTag() {
+        $(ILocators.PRODUCTS_DESCRIPTION_TAG).click();
+    }
 }
 
 //    public void jsExecuter() {

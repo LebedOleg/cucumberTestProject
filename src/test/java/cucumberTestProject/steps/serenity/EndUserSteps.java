@@ -1011,6 +1011,10 @@ public class EndUserSteps {
     public void productShouldHaveCategoryTag() {
         Assert.assertTrue(productsPage.productShouldHaveCategoryTag());
     }
+    @Step
+    public void theUserClickOnCategoryTag() {
+        productsPage.theUserClickOnCategoryTag();
+    }
 }
 
 

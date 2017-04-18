@@ -954,4 +954,9 @@ public class DefinitionSteps {
     public void productShouldHaveCategoryTag() throws Throwable {
         anna.productShouldHaveCategoryTag();
     }
+
+    @When("^the user click on category tag$")
+    public void theUserClickOnCategoryTag() throws Throwable {
+        anna.theUserClickOnCategoryTag();
+    }
 }
