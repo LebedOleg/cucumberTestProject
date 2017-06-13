@@ -8,6 +8,7 @@ import net.thucydides.core.annotations.Step;
 import org.junit.Assert;
 import org.openqa.selenium.JavascriptExecutor;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Map;
 
@@ -1014,6 +1015,15 @@ public class EndUserSteps {
     @Step
     public void theUserClickOnCategoryTag() {
         productsPage.theUserClickOnCategoryTag();
+    }
+
+    @Step
+    public void getRequest() throws IOException {
+        try {
+            welcomePage.getRequest();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
 

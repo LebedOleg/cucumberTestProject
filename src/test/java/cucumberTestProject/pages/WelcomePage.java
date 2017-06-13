@@ -15,6 +15,15 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.DefaultHttpClient;
+
 
 @DefaultUrl("http://88.198.7.89:8100/")
 
@@ -425,6 +434,19 @@ public class WelcomePage extends PageObject {
     public void theUserClickOpenSubcategoriesList() {
         $(ILocators.CATEGORY_LIST_SUBCATEGORY_ITEM2).click();
         waitABit(3000);
+    }
+
+    public void getRequest() throws ClientProtocolException, IOException {
+        HttpClient client = new DefaultHttpClient();
+        HttpGet request = new HttpGet("https://uk.wikipedia.org");
+        HttpResponse response = client.execute(request);
+        //BufferedReader rd = new BufferedReader (new InputStreamReader(response.getEntity().getContent()));
+        BufferedReader rd = new BufferedReader (new InputStreamReader(response.getEntity().getContent()));
+        String line = "";
+        while ((line = rd.readLine()) != null) {
+            System.out.println(line);
+        }
+
     }
 }
 

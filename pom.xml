@@ -12,7 +12,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <serenity.version>1.2.2-rc.1</serenity.version>
+        <serenity.version>1.2.2-rc.8</serenity.version>
         <serenity.cucumber.version>1.1.16</serenity.cucumber.version>
     </properties>
 

@@ -138,7 +138,8 @@ Feature: Products Page
     When the user click on title of first product
     Then product should have category tag
     When the user click on category tag
-    When the user click open subcategories list
+  Then
+#    When the user click open subcategories list
 #    Then subcategories list should be opened
 
 

@@ -211,6 +211,8 @@ Feature: Lookup a definition
     When the user click on left scroll button in Review image carousel
     Then New item should appear in Review image carousel
 
+  Scenario: REST
+    When GET request
 
 
 

@@ -959,4 +959,9 @@ public class DefinitionSteps {
     public void theUserClickOnCategoryTag() throws Throwable {
         anna.theUserClickOnCategoryTag();
     }
+
+    @When("^GET request$")
+    public void getRequest() throws Throwable {
+        anna.getRequest();
+    }
 }
